@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Hogar de Sensei</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 800px;
+            width: 360px;
+        }
+
+        header {
+            height: 80px;
+            background-color: #2CB6BE;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 3px #c2c0c0;
+            /* Ajuste para visualización y espacio alrededor del header y footer */
+        }
+
+        footer {
+            height: 80px;
+            background-color: #2CB6BE;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Ajuste para visualización y espacio alrededor del header y footer */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img.logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 280px;
+            height: 80px;
+            margin: 20px;
+            position: relative;
+            font-size: 16px;
+            line-height: 80px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+
+        }
+
+        #IcI {
+            background-color: transparent;
+            color: rgba(37, 133, 138, 75%);
+            text-decoration: underline;
+            text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+        }
+
+        #CC {
+            background-color: #2CB6BE;
+            box-shadow: 0 3px #999;
+        }
+
+        #IS {
+            background-color: #CEE2E7;
+            color: rgba(37, 133, 138, 75%);
+            text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+            box-shadow: 0 3px #999;
+        }
+
+        #CC:hover {
+            background-color: #CEE2E7;
+            color: rgba(37, 133, 138, 75%);
+            text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+        }
+
+        #IS:hover {
+            background-color: #2CB6BE;
+            color: #fff;
+
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+    </header>
+
+    <main>
+        <img src="src/Logo.png" alt="Logo" class="logo">
+        <a href="register.html" class="button" id="CC">Crear cuenta</a>
+        <a href="login.html" class="button" id="IS">Inicio de Sesión</a>
+        <a href="guest.html" class="button" id="IcI">Ingresar como invitado</a>
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
+
+</html>
