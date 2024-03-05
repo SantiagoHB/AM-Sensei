@@ -1,97 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 800px;
-            width: 360px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 800px;
+        width: 360px;
+      }
 
-        header {
-            height: 80px;
-            background-color: #2CB6BE;
-            border-bottom-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 3px #c2c0c0;
-            /* Ajuste para visualización y espacio alrededor del header y footer */
-        }
+      header {
+        height: 80px;
+        background-color: #2cb6be;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px #c2c0c0;
+        /* Ajuste para visualización y espacio alrededor del header y footer */
+      }
 
-        footer {
-            height: 80px;
-            background-color: #2CB6BE;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Ajuste para visualización y espacio alrededor del header y footer */
-        }
+      footer {
+        height: 80px;
+        background-color: #2cb6be;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Ajuste para visualización y espacio alrededor del header y footer */
+      }
 
-        #emailInput {
+      #emailInput {
+        width: 300px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 0.75);
+      }
+      #nameInput {
+        width: 300px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 0.75);
+      }
 
-            width: 300px;
-            height: 40px;
-            margin-left: 30px;
-            margin-right: 30px;
-            border-radius: 10px;
-            text-align: center;
-            background-color: rgba(217, 217, 217, 0.5);
-            border-color: rgba(37, 133, 138, 0.75);
-        }
+      input:focus {
+        border-color: rgba(37, 133, 138, 100%);
+      }
 
-        input:focus {
-            border-color: rgba(37, 133, 138, 100%);
-        }
+      #passwordInput {
+        width: 300px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 75%);
+        border-radius: 10px;
+        text-align: center;
+      }
+      #confirmpasswordInput {
+        width: 300px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 75%);
+        border-radius: 10px;
+        text-align: center;
+      }
 
-        #passwordInput {
+      label {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 5px;
+        color: rgba(37, 133, 138, 0.75);
+        font-size: 20px;
+      }
+      .radio-group {
+        /* Estilos para el grupo de botones de radio */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .radio-option {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
 
-            width: 300px;
-            height: 40px;
-            margin-left: 30px;
-            margin-right: 30px;
-            background-color: rgba(217, 217, 217, 0.5);
-            border-color: rgba(37, 133, 138, 75%);
-            border-radius: 10px;
-            text-align: center;
-        }
+      input[type="radio"] {
+        /* Estilos para los botones de radio */
+        width: 25px;
+        height: 25px;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 75%);
+        margin-left: 10px;
+        margin-top: 15px;
+      }
+      /* Esto cambiará el estilo del placeholder */
+      input::placeholder {
+        color: #999; /* color del placeholder */
+        transition: opacity 0.3s; /* suaviza la transición de la opacidad */
+      }
 
-        label {
-            display: block;
-            margin-top: 40px;
-            text-align: center;
-            margin-bottom: 5px;
-            color: rgba(37, 133, 138, 0.75);
-            font-size: 20px;
-        }
+      /* Esto hará que el placeholder sea completamente transparente cuando el input esté enfocado */
+      input:focus::placeholder {
+        opacity: 0;
+      }
+      input:focus {
+        border-color: rgba(37, 133, 138, 0.75);
+        outline: none;
+      }
+      #CC {
+        background-color: #cee2e7;
+        color: rgba(37, 133, 138, 75%);
+        text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+        box-shadow: 0 3px #999;
+      }
+      #CC:hover {
+        background-color: #2cb6be;
+
+      }
+      .button {
+        display: block;
+        width: 300px;
+        height: 50px;
+        margin: 30px;
+        m
+        position: relative;
+        font-size: 16px;
+        line-height: 50px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <header>
-    </header>
+  <body>
+    <header></header>
+    <label for="name">Nombre Completo</label>
+    <input
+      type="name"
+      id="nameInput"
+      name="name"
+      placeholder="Juanito Perez"
+      maxlength="40"
+    />
     <label for="emailInput">Correo Electrónico</label>
-    <input type="email" id="emailInput" name="email" placeholder="ejemplo@dominio.com" maxlength="40">
+    <input
+      type="email"
+      id="emailInput"
+      name="email"
+      placeholder="ejemplo@dominio.com"
+      maxlength="40"
+    />
     <label for="passwordInput">Contraseña</label>
-    <input type="password" id="passwordInput" name="password" maxlength="16">
-    <a hred="" class="button" id="IS">Iniciar Sesión</a>
+    <input
+      type="password"
+      id="passwordInput"
+      name="password"
+      maxlength="16"
+      placeholder="1234"
+    />
+    <label for="confirmpasswordInput">Confirmar Contraseña</label>
+    <input
+      type="password"
+      id="confirmpasswordInput"
+      placeholder="1234"
+      name="password"
+      maxlength="16"
+    />
 
-    <footer>
-    </footer>
+    <label for="pet-question">¿Qué Mascota Tienes?</label>
+    <div class="radio-group">
+      <div class="radio-option">
+        <label for="dog">Perro :</label>
+        <input type="radio" id="dog" name="pet" value="dog" />
+      </div>
+      <div class="radio-option">
+        <label for="cat">Gato :</label>
+        <input type="radio" id="cat" name="pet" value="cat" />
+      </div>
+    </div>
 
-</body>
+    <a hred="" class="button" id="CC">Crear Cuenta</a>
 
+    <footer></footer>
+  </body>
 </html>
