@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensei Pet Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            width: 360px;
+            height: 800px;
+        }
+
+        .header {
+            background-color: #00b4d8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            display: flex;
+            align-items: center;
+            height: 200px;
+            flex-direction: column;
+            /* Align children vertically */
+            justify-content: center;
+            box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
+            margin-bottom: 10px;
+
+        }
+
+        .logo-slogan {
+            display: flex;
+            align-items: center;
+            /* Align logo and slogan horizontally */
+            margin-bottom: 10px;
+            /* Adjust as needed */
+        }
+
+        .logo {
+            width: auto;
+            height: 100px;
+            display: flex;
+            margin-right: 10px;
+            margin-left: 0px;
+
+
+        }
+
+        .nombre {
+            text-align: left;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slogan {
+            text-align: left;
+            font-size: 8px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nombre,
+        .slogan {
+            display: block;
+            /* Make them stack vertically */
+        }
+
+        .search-box {
+            width: 100%;
+            /* Full width */
+            padding: 0 20px;
+            /* Add some padding on the sides */
+
+        }
+
+        .search-input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 3px #c2c0c0;
+        }
+
+        .category {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .categoria-perro {
+            margin: 20px;
+            padding-top: 5px;
+        }
+
+        .category-item {
+            text-align: center;
+            border-radius: 100%;
+            border-color: #000;
+        }
+
+        .category-link {
+            display: block;
+            /* Make the link take up the entire container */
+            text-align: center;
+            /* Center the text */
+            text-decoration: none;
+            /* Remove underline from link */
+            color: inherit;
+            /* The text color inherits from the parent element */
+            padding: 10px;
+            /* Add some padding */
+            border-radius: 10px;
+            /* Optional: if you want rounded corners */
+            transition: background-color 0.3s;
+            /* For a smooth color transition */
+        }
+
+        .category-link:hover,
+        .category-link:focus {
+            background-color: #eee;
+            /* Change color on hover/focus for a button-like feedback */
+            outline: none;
+            /* Removes the outline */
+        }
+
+        .category-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .category-item p {
+            font-size: 0.9rem;
+        }
+
+        .footer-menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #00b4d8;
+            padding: 10px 0;
+            bottom: 0;
+            height: 80px;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
+
+        }
+
+        .footer-menu a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo-slogan">
+            <img src="/src/Inicio.png" class="logo">
+            <div>
+                <span class="nombre">El hogar de Sensei</span>
+                <span class="slogan">Nutrición y Salud</span>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="¿Qué necesita tu mascota?">
+        </div>
+    </div>
+
+
+
+    <div class="categories">
+        <a class="categoria-perro">Categorias para Perros</a>
+        <div class="category">
+            <div class="category-item">
+                <a href="" class="category-link">
+                    <img src="/src/Alimento.png" alt="Alimento">
+                    <p>Alimento</p>
+                </a>
+            </div>
+            <div class="category-item">
+                <a href="" class="category-link">
+                    <img src="/src/Snack.png" alt="Snacks">
+                    <p>Snacks</p>
+                </a>
+            </div>
+            <div class="category-item">
+                <a href="" class="category-link">
+                    <img src="/src/Farmapet.png" alt="FarmaPet">
+                    <p>FarmaPet</p>
+                </a>
+            </div>
+        </div>
+        <div class="category">
+            <div class="category-item">
+                <a href="" class="category-link">
+                    <img src="/src/Cuidado e higiene.png" alt="Cuidado e Higiene">
+                    <p>Cuidado e Higiene</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <a class="categoria-perro">Conoce Más</a>
+    <div class="category-item">
+        <a href="" class="category-link">
+            <img src="servicios.jpg" alt="Servicios">
+            <p>Servicios</p>
+        </a>
+    </div>
+    <div class="category-item">
+        <a href="" class="category-link">
+            <img src="otros.jpg" alt="Otros">
+            <p>Otros</p>
+        </a>
+    </div>
+
+    <div class="footer-menu">
+        <a href="#">Inicio</a>
+        <a href="#">Mis Compras</a>
+        <a href="#">Promociones</a>
+        <a href="#">Membresía</a>
+        <a href="#">Cuenta</a>
+    </div>
+
+</body>
+
+</html>
