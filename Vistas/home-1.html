@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensei Pet Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: "Inder", sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -16,7 +17,7 @@
         }
 
         .header {
-            background-color: #00b4d8;
+            background-color: #2CB6BE;
             color: white;
             padding: 20px;
             text-align: center;
@@ -142,7 +143,7 @@
         .footer-menu {
             display: flex;
             justify-content: space-around;
-            background-color: #00b4d8;
+            background-color: #2CB6BE;
             padding: 10px 0;
             bottom: 0;
             height: 80px;
@@ -155,6 +156,71 @@
         .footer-menu a {
             color: white;
             text-decoration: none;
+        }
+
+        .nav-bar {
+            background-color: #2CB6BE;
+            /* Your desired background color */
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            /* Rounded corners */
+            display: flex;
+            /* Use flexbox for alignment */
+            justify-content: space-around;
+            /* Evenly space the items */
+            padding: 10px;
+            /* Some padding around the items */
+            /* Margin around the navigation bar */
+            list-style-type: none;
+            /* Remove default list styles */
+            width: 360px;
+            height: 80px;
+            margin: 0px;
+            box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
+
+
+        }
+
+        .nav-bar li {
+            display: inline;
+            /* Display list items inline */
+
+
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            /* Remove underline from links */
+            color: white;
+            /* Text color for links */
+            font-family: Arial, sans-serif;
+            /* Font style for links */
+            display: flex;
+            /* Use flex to align icon and text */
+            align-items: center;
+            /* Align items vertically */
+            gap: 40px;
+            /* Space between icon and text */
+            font-size: 10px;
+            flex-direction: column;
+            height: 80px;
+
+        }
+
+        .nav-bar img {
+            width: 50px;
+            /* Example size, adjust as needed */
+            height: 50px;
+            /* Maintain aspect ratio */
+        }
+
+        /* Hover effect for the links */
+        .nav-bar a:hover {
+            border: 1px solid white;
+            /* White border on hover */
+            border-radius: 5px;
+            /* Rounded corners for the border */
+            /* Adjust padding to maintain the overall size */
         }
     </style>
 </head>
@@ -177,7 +243,7 @@
 
 
     <div class="categories">
-        <a class="categoria-perro">Categorias para Perros</a>
+        <a class="categoria-perro">Categorías para Perros</a>
         <div class="category">
             <div class="category-item">
                 <a href="" class="category-link">
@@ -210,24 +276,24 @@
     <a class="categoria-perro">Conoce Más</a>
     <div class="category-item">
         <a href="" class="category-link">
-            <img src="servicios.jpg" alt="Servicios">
+            <img src="servicios.jpg">
             <p>Servicios</p>
         </a>
     </div>
     <div class="category-item">
         <a href="" class="category-link">
-            <img src="otros.jpg" alt="Otros">
+            <img src="otros.jpg">
             <p>Otros</p>
         </a>
     </div>
 
-    <div class="footer-menu">
-        <a href="#">Inicio</a>
-        <a href="#">Mis Compras</a>
-        <a href="#">Promociones</a>
-        <a href="#">Membresía</a>
-        <a href="#">Cuenta</a>
-    </div>
+    <ul class="nav-bar">
+        <li><a href="#"><img src="/src/Inicio.png">Inicio</a></li>
+        <li><a href="#"><img src="shopping-icon.png"> Mis Compras</a></li>
+        <li><a href="#"><img src="promotions-icon.png"> Promociones</a></li>
+        <li><a href="#"><img src="membership-icon.png"> Membresía</a></li>
+        <li><a href="#"><img src="account-icon.png"> Cuenta</a></li>
+    </ul>
 
 </body>
 
