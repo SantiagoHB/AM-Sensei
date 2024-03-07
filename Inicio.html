@@ -7,6 +7,20 @@
     <title>El Hogar de Sensei</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
     <style>
+        html {
+            height: 100%;
+            margin: 0;
+            /* Oculta el desbordamiento de la página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Establece el color de fondo de la página */
+            border-left: 1px #000;
+        }
+
+        /* Esto es para esconder el desbordamiento en la parte superior e inferior */
+
+
         body {
             font-family: "Inder", sans-serif;
             background-color: #fff;
@@ -53,7 +67,8 @@
         }
 
         img.logo {
-            width: 200px;
+            margin-top: 20px;
+            width: 180px;
             height: auto;
             margin-bottom: 20px;
         }
@@ -110,16 +125,18 @@
 </head>
 
 <body>
-    <header></header>
+    <div class="contenedor-app">
+        <header></header>
 
-    <main>
-        <img src="src/Logo.png" alt="Logo" class="logo" />
-        <a href="Vistas/register.html" class="button" id="CC">Crear cuenta</a>
-        <a href="Vistas/login.html" class="button" id="IS">Inicio de Sesión</a>
-        <a href="Vistas/home-1.html" class="button" id="IcI">Ingresar como invitado</a>
-    </main>
+        <main>
+            <img src="src/Logo.png" alt="Logo" class="logo" />
+            <a href="Vistas/register.html" class="button" id="CC">Crear cuenta</a>
+            <a href="Vistas/login.html" class="button" id="IS">Inicio de Sesión</a>
+            <a href="Vistas/home-1.html" class="button" id="IcI">Ingresar como invitado</a>
+        </main>
 
-    <footer></footer>
+        <footer></footer>
+    </div>
 </body>
 
 </html>
