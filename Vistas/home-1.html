@@ -54,10 +54,10 @@
       }
 
       .logo {
-        width: auto;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         display: flex;
-        margin-right: 10px;
+        margin-right: 0px;
         margin-left: 0px;
       }
 
@@ -108,7 +108,7 @@
           background-position 0.5s ease, padding-left 0.5s ease;
         /* Transición suave para el fondo y el padding */
         /* Otros estilos para tu input */
-        box-shadow: 0 3px 6px -1px rgba(121, 120, 120, 0.75);
+        box-shadow: 0 3px 6px -1px rgba(70, 69, 69, 0.9);
         flex-grow: 1;
       }
 
@@ -151,11 +151,7 @@
       }
 
       .cart-button:hover {
-        border: 2px solid white;
-        /* Establece un borde de 3px sólido y negro */
-        border-radius: 15px;
-        /* Establece el radio del borde como prefieras */
-        box-shadow: 0 3px 6px -1px rgba(121, 120, 120, 0.75);
+        filter: drop-shadow(0 3px 10px rgba(70, 69, 69, 0.9));
         /* Opcional: Agrega una sombra suave */
       }
 
@@ -167,13 +163,13 @@
 
       .category {
         display: flex;
-        justify-content: space-around;
-        margin: 10px;
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 20px;
+        padding-top: 5px;
       }
 
       .categoria-perro {
-        margin: 20px;
-        padding-top: 5px;
       }
 
       .category-item {
@@ -208,8 +204,8 @@
       }
 
       .category-item img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
       }
 
@@ -307,7 +303,7 @@
   <body>
     <div class="header">
       <div class="logo-slogan">
-        <img src="/src/Inicio.png" class="logo" />
+        <img src="/src/logo.png" class="logo" />
         <div>
           <span class="nombre">El hogar de Sensei</span>
           <span class="slogan">Nutrición y Salud</span>
@@ -327,7 +323,7 @@
     </div>
 
     <div class="categories">
-      <a class="categoria-perro">Categorías para Perros</a>
+      <a class="categoria-perro">Categorías</a>
       <div class="category">
         <div class="category-item">
           <a href="" class="category-link">
@@ -352,12 +348,13 @@
         <div class="category-item">
           <a href="" class="category-link">
             <img src="/src/Cuidado e higiene.png" alt="Cuidado e Higiene" />
-            <p>Cuidado e Higiene</p>
+            <p>Cuidado</p>
+            <p>e Higiene</p>
           </a>
         </div>
       </div>
     </div>
-    <a class="categoria-perro">Conoce Más</a>
+    <a class="categoria-perro">Servicios</a>
     <div class="category-item">
       <a href="" class="category-link">
         <img src="servicios.jpg" />

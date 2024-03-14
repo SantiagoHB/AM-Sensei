@@ -1,318 +1,329 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El hogar de Sensei - Inicio de Sesion</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
+    />
     <style>
-        html {
-            height: 100%;
-            margin: 0;
-            /* Oculta el desbordamiento de la página */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Establece el color de fondo de la página */
-        }
+      html {
+        height: 100%;
+        margin: 0;
+        /* Oculta el desbordamiento de la página */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Establece el color de fondo de la página */
+      }
 
-        body {
-            font-family: "Inder", sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 800px;
-            width: 360px;
-        }
+      body {
+        font-family: "Inder", sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 800px;
+        width: 360px;
+      }
 
-        header {
-            height: 80px;
-            background-color: #2cb6be;
-            border-bottom-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 3px #c2c0c0;
-            /* Ajuste para visualización y espacio alrededor del header y footer */
-        }
+      header {
+        height: 80px;
+        background-color: #2cb6be;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px #c2c0c0;
+        /* Ajuste para visualización y espacio alrededor del header y footer */
+      }
 
-        .separator {
-            display: flex;
-            width: 360px;
-            align-items: center;
-            text-align: center;
-            margin-top: 20px;
-        }
+      .separator {
+        display: flex;
+        width: 360px;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+      }
 
-        .separator::before,
-        .separator::after {
-            content: "";
-            flex: 1;
-            border-bottom: 2px solid #25858a;
-        }
+      .separator::before,
+      .separator::after {
+        content: "";
+        flex: 1;
+        border-bottom: 2px solid #25858a;
+      }
 
-        .separator::before {
-            margin-right: 0.25em;
-        }
+      .separator::before {
+        margin-right: 0.25em;
+      }
 
-        .separator::after {
-            margin-left: 0.25em;
-        }
+      .separator::after {
+        margin-left: 0.25em;
+      }
 
-        /* Asumiendo que quieres usar un círculo en el medio como en la imagen */
-        .separator-icon {
-            height: 7px;
-            width: 7px;
-            background-color: white;
-            border: 2px solid #25858a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Aquí puedes añadir un ícono o texto si quieres dentro del círculo */
-        }
+      /* Asumiendo que quieres usar un círculo en el medio como en la imagen */
+      .separator-icon {
+        height: 7px;
+        width: 7px;
+        background-color: white;
+        border: 2px solid #25858a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Aquí puedes añadir un ícono o texto si quieres dentro del círculo */
+      }
 
-        #emailInput {
-            width: 300px;
-            height: 40px;
-            margin-left: 30px;
-            margin-right: 30px;
-            border-radius: 10px;
-            text-align: center;
-            background-color: rgba(217, 217, 217, 0.5);
-            border-color: rgba(37, 133, 138, 0.75);
-        }
+      #emailInput {
+        width: 300px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 0.75);
+      }
 
-        input:focus {
-            border-color: rgba(37, 133, 138, 0.75);
-            outline: none;
-        }
+      input:focus {
+        border-color: rgba(37, 133, 138, 0.75);
+        outline: none;
+      }
 
-        #passwordInput {
-            width: 300px;
-            height: 40px;
-            margin-left: 30px;
-            margin-right: 30px;
-            background-color: rgba(217, 217, 217, 0.5);
-            border-color: rgba(37, 133, 138, 75%);
-            border-radius: 10px;
-            text-align: center;
-        }
+      #passwordInput {
+        width: 300px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        background-color: rgba(217, 217, 217, 0.5);
+        border-color: rgba(37, 133, 138, 75%);
+        border-radius: 10px;
+        text-align: center;
+      }
 
-        label {
-            display: block;
-            margin-top: 40px;
-            text-align: center;
-            margin-bottom: 5px;
-            color: rgba(37, 133, 138, 0.75);
-            font-size: 20px;
-        }
+      label {
+        display: block;
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 5px;
+        color: rgba(37, 133, 138, 0.75);
+        font-size: 20px;
+      }
 
-        h1 {
-            width: 300px;
-            height: auto;
-            font-size: 20px;
-            margin-left: 30px;
-            margin-top: 40px;
-            text-align: center;
-            display: block;
-            color: rgba(37, 133, 138, 1);
-        }
+      h1 {
+        width: 300px;
+        height: auto;
+        font-size: 20px;
+        margin-left: 30px;
+        margin-top: 40px;
+        text-align: center;
+        display: block;
+        color: rgba(37, 133, 138, 1);
+      }
 
-        #forgotpw {
-            background-color: transparent;
-            border-color: transparent;
-            text-align: center;
-            margin-top: 10px;
-            display: block;
-            margin-left: 120px;
-            text-decoration: none;
-            font-weight: bold;
-            color: rgba(37, 133, 138, 1);
-        }
+      #forgotpw {
+        background-color: transparent;
+        border-color: transparent;
+        text-align: center;
+        margin-top: 10px;
+        display: block;
+        margin-left: 120px;
+        text-decoration: none;
+        font-weight: bold;
+        color: rgba(37, 133, 138, 1);
+      }
 
-        #IS {
-            background-color: #cee2e7;
-            color: rgba(37, 133, 138, 75%);
-            text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
-            box-shadow: 0 3px #999;
-        }
+      #IS {
+        background-color: #cee2e7;
+        color: rgba(37, 133, 138, 75%);
+        text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+        box-shadow: 0 3px #999;
+      }
 
-        #IS:hover {
-            background-color: #2cb6be;
-            color: #fff;
-        }
+      #IS:hover {
+        background-color: #2cb6be;
+        color: #fff;
+      }
 
-        .button {
-            display: block;
-            width: 300px;
-            height: 50px;
-            margin: 30px;
-            position: relative;
-            font-size: 16px;
-            line-height: 50px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-        }
+      .button {
+        display: block;
+        width: 300px;
+        height: 50px;
+        margin: 30px;
+        position: relative;
+        font-size: 16px;
+        line-height: 50px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+      }
 
-        .container {
-            display: block;
-            text-align: center;
-            margin-left: 120px;
-            /* Centra el texto en caso de que la pantalla sea muy ancha */
-        }
+      .container {
+        display: block;
+        text-align: center;
+        margin-left: 120px;
+        /* Centra el texto en caso de que la pantalla sea muy ancha */
+      }
 
-        /* Estilo para alinear texto */
-        .inline-text {
-            display: inline;
-            /* Hace que los elementos span se sitúen en línea */
-        }
+      /* Estilo para alinear texto */
+      .inline-text {
+        display: inline;
+        /* Hace que los elementos span se sitúen en línea */
+      }
 
-        /* Agrega un poco de espacio entre los elementos en línea si es necesario */
-        .spacer {
-            margin-right: 5px;
-            font-size: 12px;
-            color: #25858a;
-            /* Ajusta el espacio según tus necesidades */
-        }
+      /* Agrega un poco de espacio entre los elementos en línea si es necesario */
+      .spacer {
+        margin-right: 5px;
+        font-size: 12px;
+        color: #25858a;
+        /* Ajusta el espacio según tus necesidades */
+      }
 
-        /* Estilo para el enlace "Registrate Aquí" */
-        .signup-link {
-            text-decoration: underline;
-            color: rgba(37, 133, 138, 1);
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: rgba(37, 133, 138, 0.5);
-            font-weight: bold;
-        }
+      /* Estilo para el enlace "Registrate Aquí" */
+      .signup-link {
+        text-decoration: underline;
+        color: rgba(37, 133, 138, 1);
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(37, 133, 138, 0.5);
+        font-weight: bold;
+      }
 
-        .fb {
-            background-color: transparent;
-            width: 280px;
-            height: 50px;
-            text-align: center;
-        }
+      .fb {
+        background-color: transparent;
+        width: 280px;
+        height: 50px;
+        text-align: center;
+      }
 
-        .container-apple {
-            width: 280px;
-            height: 50px;
-            background-color: black;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 40px;
-            margin-right: 40px;
-            border-radius: 5px;
-            text-align: center;
-            line-height: 50px;
-            display: flex;
-            /* This will align items in a row */
-            align-items: center;
-            /* This will vertically center the icon with the text */
-            justify-content: center;
-            /* This will center the content inside the container */
-            /* Other styles */
-        }
+      .container-apple {
+        width: 280px;
+        height: 50px;
+        background-color: black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 50px;
+        display: flex;
+        /* This will align items in a row */
+        align-items: center;
+        /* This will vertically center the icon with the text */
+        justify-content: center;
+        /* This will center the content inside the container */
+        /* Other styles */
+      }
 
-        .apple {
-            text-decoration: none;
-            color: #fff;
-        }
+      .apple {
+        text-decoration: none;
+        color: #fff;
+      }
 
-        .apple-icon {
-            margin-right: 8px;
-            /* Space between icon and text */
-            /* If the icon size is too big, adjust it here */
-            width: 15px;
-            /* Example size, adjust as needed */
-            height: auto;
-            /* Keep aspect ratio */
-            filter: invert(100%);
-        }
+      .apple-icon {
+        margin-right: 8px;
+        /* Space between icon and text */
+        /* If the icon size is too big, adjust it here */
+        width: 15px;
+        /* Example size, adjust as needed */
+        height: auto;
+        /* Keep aspect ratio */
+        filter: invert(100%);
+      }
 
-        .container-fb {
-            width: 280px;
-            height: 50px;
-            background-color: transparent;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 40px;
-            margin-right: 40px;
-            border-radius: 5px;
-            text-align: center;
-            line-height: 50px;
-            display: flex;
-            /* This will align items in a row */
-            align-items: center;
-            /* This will vertically center the icon with the text */
-            justify-content: center;
-            /* This will center the content inside the container */
-            /* Other styles */
-        }
+      .container-fb {
+        width: 280px;
+        height: 50px;
+        background-color: transparent;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 50px;
+        display: flex;
+        /* This will align items in a row */
+        align-items: center;
+        /* This will vertically center the icon with the text */
+        justify-content: center;
+        /* This will center the content inside the container */
+        /* Other styles */
+      }
 
-        .fb {
-            text-decoration: none;
-            color: #333a60;
-        }
+      .fb {
+        text-decoration: none;
+        color: #333a60;
+      }
 
-        .fb-icon {
-            margin-left: 1px;
-            /* Space between icon and text */
-            /* If the icon size is too big, adjust it here */
-            width: 15px;
-            /* Example size, adjust as needed */
-            height: auto;
-        }
+      .fb-icon {
+        margin-left: 1px;
+        /* Space between icon and text */
+        /* If the icon size is too big, adjust it here */
+        width: 15px;
+        /* Example size, adjust as needed */
+        height: auto;
+      }
 
-        /* Esto cambiará el estilo del placeholder */
-        input::placeholder {
-            color: #999;
-            /* color del placeholder */
-            transition: opacity 0.3s;
-            /* suaviza la transición de la opacidad */
-        }
+      /* Esto cambiará el estilo del placeholder */
+      input::placeholder {
+        color: #999;
+        /* color del placeholder */
+        transition: opacity 0.3s;
+        /* suaviza la transición de la opacidad */
+      }
 
-        /* Esto hará que el placeholder sea completamente transparente cuando el input esté enfocado */
-        input:focus::placeholder {
-            opacity: 0;
-        }
+      /* Esto hará que el placeholder sea completamente transparente cuando el input esté enfocado */
+      input:focus::placeholder {
+        opacity: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header></header>
     <h1>¡Bienvenido de nuevo!</h1>
     <label for="emailInput">Correo Electrónico</label>
-    <input type="email" id="emailInput" name="email" placeholder="ejemplo@dominio.com" maxlength="40" />
+    <input
+      type="email"
+      id="emailInput"
+      name="email"
+      placeholder="ejemplo@dominio.com"
+      maxlength="40"
+    />
     <label for="passwordInput">Contraseña</label>
     <input type="password" id="passwordInput" name="password" maxlength="16" />
-    <a href="Vistas/login.html" class="buttonfp" id="forgotpw">¿Olvidaste tu contraseña?</a>
-    <a href="" class="button" id="IS">Iniciar Sesión</a>
+    <a href="Vistas/login.html" class="buttonfp" id="forgotpw"
+      >¿Olvidaste tu contraseña?</a
+    >
+    <a href="/Vistas/home-1.html" class="button" id="IS">Iniciar Sesión</a>
     <div class="container">
-        <span class="inline-text spacer">¿Eres nuevo?</span>
-        <a href="/Vistas/register.html" class="inline-text signup-link">Registrate Aquí</a>
+      <span class="inline-text spacer">¿Eres nuevo?</span>
+      <a href="/Vistas/register.html" class="inline-text signup-link"
+        >Registrate Aquí</a
+      >
     </div>
     <div class="separator">
-        <div class="separator-icon"></div>
+      <div class="separator-icon"></div>
     </div>
     <div class="container-fb">
-        <a href="" class="fb">Inicia Sesion con Facebook</a>
-        <img src="/src/facebook.png" class="fb-icon" />
+      <a href="" class="fb">Inicia Sesion con Facebook</a>
+      <img src="/src/facebook.png" class="fb-icon" />
     </div>
     <div class="container-apple">
-        <a href="" class="apple">
-            <img src="/src/apple.png" class="apple-icon" />
-            Sign in with apple
-        </a>
+      <a href="" class="apple">
+        <img src="/src/apple.png" class="apple-icon" />
+        Sign in with apple
+      </a>
     </div>
-</body>
-
+  </body>
 </html>
