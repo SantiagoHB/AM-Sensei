@@ -83,19 +83,86 @@
         }
 
         .search-box {
-            width: 100%;
-            /* Full width */
-            padding: 0 20px;
-            /* Add some padding on the sides */
-
+            display: flex;
+            /* Establece el contenedor como un contenedor flex */
+            justify-content: center;
+            /* Centra horizontalmente el contenido */
+            align-items: center;
+            /* Centra verticalmente el contenido */
+            /* O 'block' si prefieres */
         }
 
         .search-input {
-            width: 80%;
+            width: 100%;
+            /* O el ancho que prefieras */
             padding: 10px;
-            border: none;
+            padding-left: 40px;
+            /* Espacio para la lupa */
+            border: 1px;
+            border-color: rgba(37, 133, 138, 75%);
             border-radius: 5px;
-            box-shadow: 0 3px #c2c0c0;
+            /* Para bordes redondeados */
+            background-image: url('/src/lupita.png');
+            background-position: 10px center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease-in-out, background-position 0.5s ease, padding-left 0.5s ease;
+            /* Transición suave para el fondo y el padding */
+            /* Otros estilos para tu input */
+            box-shadow: 0 3px 6px -1px rgba(121, 120, 120, 0.75);
+            flex-grow: 1;
+        }
+
+        .search-input:focus {
+            background-image: none;
+            /* Quita la imagen de la lupa */
+            padding-left: 10px;
+            border-color: rgba(37, 133, 138, 100%);
+            outline: none;
+            /* Mueve el texto al principio */
+            /* Puedes cambiar el color del borde o del fondo al enfocar si lo deseas */
+        }
+
+        /* Para que la transición ocurra en el placeholder también */
+        ::placeholder {
+            transition: opacity 0.5s ease;
+        }
+
+        .search-input:focus::placeholder {
+            opacity: 0;
+            /* Hace el placeholder completamente transparente */
+        }
+
+        .cart-button {
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            /* El ancho deseado para tu botón de carrito */
+            height: 40px;
+            /* La altura deseada para tu botón de carrito */
+            background-color: transparent;
+            /* O cualquier otro color que prefieras */
+            margin-left: 8px;
+            /* Ajusta la distancia entre el input y el botón del carrito
+
+            /* Invierte los colores de la imagen */
+
+            /* Agrega sombra: horizontal, vertical, blur, color */
+            transition: border-radius 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cart-button:hover {
+            border: 3px solid black;
+            /* Establece un borde de 3px sólido y negro */
+            border-radius: 15px;
+            /* Establece el radio del borde como prefieras */
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+            /* Opcional: Agrega una sombra suave */
+        }
+
+        .carrito-img {
+            height: 40px;
+            width: 40px;
+            filter: invert(100%) drop-shadow(0 3px 6px rgba(121, 120, 120, 0.75));
         }
 
         .category {
@@ -247,6 +314,10 @@
         </div>
         <div class="search-box">
             <input type="text" class="search-input" placeholder="¿Qué necesita tu mascota?">
+            <button class="cart-button">
+                <img class="carrito-img" src="/src/carrito.png" alt="Carrito">
+                <!-- Asumiendo que tienes una imagen para el botón del carrito -->
+            </button>
         </div>
     </div>
 
