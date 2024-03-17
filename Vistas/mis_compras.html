@@ -9,39 +9,58 @@
       href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
     />
     <style>
+      html {
+        height: 800px;
+        margin: 0;
+        /* Oculta el desbordamiento de la página */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Establece el color de fondo de la página */
+      }
       body {
         font-family: "Inder", sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
-        width: 100%;
-        max-width: 480px; /* This width is typical for mobile devices */
-        margin: auto;
-        overflow-x: hidden;
-        height: 100vh;
-        position: relative; /* For footer to be positioned at the bottom */
+        width: 360px;
+        height: 800px;
       }
 
       .header {
         background-color: #2cb6be;
         color: white;
-        padding: 16px 20px; /* Same padding as header */
+        text-align: center;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
+        margin-bottom: 10px;
+        width: 360px;
+        /* Mantener la altura original y el padding */
+        padding: 20px;
+        /* Alinear los elementos a la izquierda */
+        text-align: left;
+        /* Alinear los ítems verticalmente en el centro */
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        border-bottom-right-radius: 25px;
-        border-bottom-left-radius: 25px;
-        box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
+      }
+
+      .header-content {
+        /* Alinear horizontalmente los elementos */
+        display: flex;
+        align-items: center;
       }
 
       .back-arrow {
         font-size: 24px;
-        margin-right: 20px; /* Space between arrow and text */
+        margin-right: 10px; /* Ajusta el espacio a tu gusto */
+        text-decoration: none;
+        color: white;
       }
 
       .header-title {
         font-size: 20px;
-        flex-grow: 1; /* Ensure title takes available space */
+        /* Elimina flex-grow si no lo necesitas */
       }
 
       .subheader {
@@ -53,8 +72,9 @@
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
         box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
-        margin-top: -25px;
+        margin-top: -30px;
         z-index: -1; /* Put behind the main header */
+        width: 360px;
       }
 
       .content {
@@ -71,30 +91,71 @@
 
       .nav-bar {
         background-color: #2cb6be;
-        display: flex;
-        justify-content: space-around;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        padding: 16px 20px; /* Adjusted to match header padding */
+        /* Your desired background color */
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
-        box-shadow: 0px -4px 6px -1px rgba(0, 0, 0, 0.1);
+        /* Rounded corners */
+        display: flex;
+        /* Use flexbox for alignment */
+        justify-content: space-around;
+        /* Evenly space the items */
+        /* Some padding around the items */
+        /* Margin around the navigation bar */
+        list-style-type: none;
+        /* Remove default list styles */
+        width: 360px;
+        height: 80px;
+        box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      .nav-bar li {
+        display: inline;
+        /* Display list items inline */
+        padding: 0;
+        margin: 0;
       }
 
       .nav-bar a {
         text-decoration: none;
+        /* Remove underline from links */
         color: white;
+        /* Text color for links */
+        font-family: Arial, sans-serif;
+        /* Font style for links */
         display: flex;
-        flex-direction: column;
+        /* Use flex to align icon and text */
         align-items: center;
-        font-size: 12px; /* Adjusted for readability on mobile */
+        /* Align items vertically */
+        gap: 5px;
+        /* Space between icon and text */
+        font-size: 10px;
+        flex-direction: column;
+        height: 80px;
       }
 
       .nav-bar img {
-        width: 30px; /* Adjusted for mobile */
-        height: 30px;
-        margin-bottom: 5px;
+        width: 50px;
+        /* Example size, adjust as needed */
+        height: 50px;
+        /* Maintain aspect ratio */
+      }
+
+      .nav-bar img.Inicio {
+        margin-bottom: 0px;
+        justify-items: center;
+        width: 50px;
+        height: 50px;
+      }
+
+      /* Hover effect for the links */
+      .nav-bar a:hover {
+        border: 1px solid rgba(203, 201, 224, 0.8);
+        /* White border on hover */
+        border-radius: 10px;
+        /* Rounded corners for the border */
+        /* Adjust padding to maintain the overall size */
       }
     </style>
   </head>
@@ -113,26 +174,22 @@
     </div>
 
     <!-- Navigation bar (footer) -->
-    <div class="nav-bar">
-      <!-- Replace src attribute with the path to your images -->
-      <a href="#"
-        ><img src="/src/inicio.png" alt="Inicio" /><span>Inicio</span></a
-      >
-      <a href="#"
-        ><img src="/src/compras.png" alt="Mis Compras" /><span
-          >Mis Compras</span
-        ></a
-      >
-      <a href="#"
-        ><img src="/src/promociones.png" alt="Promociones" /><span
-          >Promociones</span
-        ></a
-      >
-      <a href="#"
-        ><img src="/src/membresia.png" alt="Membresía" /><span
-          >Membresía</span
-        ></a
-      >
-    </div>
+    <ul class="nav-bar">
+      <li>
+        <a href="#"><img src="/src/logo.png" class="Inicio" />Inicio</a>
+      </li>
+      <li>
+        <a href="#"><img src="/src/compras.png" /> Mis Compras</a>
+      </li>
+      <li>
+        <a href="#"><img src="/src/descuento.png" /> Promociones</a>
+      </li>
+      <li>
+        <a href="#"><img src="/src/membresia.png" /> Membresía</a>
+      </li>
+      <li>
+        <a href="#"><img src="/src/cuenta.png" /> Cuenta</a>
+      </li>
+    </ul>
   </body>
 </html>
