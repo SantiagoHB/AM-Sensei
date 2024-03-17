@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historial - El hogar de Sensei</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
+    <style>
+        body {
+            font-family: 'Inder', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            width: 100%;
+            max-width: 480px; /* This width is typical for mobile devices */
+            margin: auto;
+            overflow-x: hidden;
+            height: 100vh;
+            position: relative; /* For footer to be positioned at the bottom */
+        }
+
+        .header {
+            background-color: #2cb6be;
+            color: white;
+            padding: 16px 20px; /* Same padding as header */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            margin-right: 20px; /* Space between arrow and text */
+        }
+
+        .header-title {
+            font-size: 20px;
+            flex-grow: 1; /* Ensure title takes available space */
+        }
+
+        .subheader {
+            background-color: #2cb6be;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: left;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
+            margin-top: -25px;
+            z-index: -1; /* Put behind the main header */
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .nav-bar {
+            background-color: #2cb6be;
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 16px 20px; /* Adjusted to match header padding */
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            box-shadow: 0px -4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px; /* Adjusted for readability on mobile */
+        }
+
+        .nav-bar img {
+            width: 30px; /* Adjusted for mobile */
+            height: 30px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="back-arrow">←</div>
+        <div class="header-title">HISTORIAL</div>
+    </div>
+    <div class="subheader">COMPRAS O SERVICIOS</div>
+
+    <div class="content">
+        <p>No tienes ningún pedido o servicio activo</p>
+    </div>
+
+    <!-- Navigation bar (footer) -->
+    <div class="nav-bar">
+        <!-- Replace src attribute with the path to your images -->
+        <a href="#"><img src="/src/inicio.png" alt="Inicio" /><span>Inicio</span></a>
+        <a href="#"><img src="/src/compras.png" alt="Mis Compras" /><span>Mis Compras</span></a>
+        <a href="#"><img src="/src/promociones.png" alt="Promociones" /><span>Promociones</span></a>
+        <a href="#"><img src="/src/membresia.png" alt="Membresía" /><span>Membresía</span></a>
+    </div>
+</body>
+</html>
