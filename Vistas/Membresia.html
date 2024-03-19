@@ -106,6 +106,15 @@
             font-weight: bold;
         }
 
+        .nuestra {
+            color: #2CB6BE;
+        }
+
+        .title-desc {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
         .membership-description,
         .benefits-list {
             font-size: 14px;
@@ -114,11 +123,11 @@
             margin-bottom: 15px;
             margin-left: 10px;
             margin-right: 10px;
-        }
-
-        .benefits-list {
             list-style: none;
-            padding-left: 0;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #2CB6BE;
+
         }
 
         .benefits-list li {
@@ -135,6 +144,7 @@
             top: 0;
             font-size: 22px;
         }
+
         .purchase-button {
             background-color: #2cb6be;
             color: white;
@@ -143,7 +153,17 @@
             font-size: 18px;
             border-radius: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
             margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .purchase-button:hover {
+            background-color: #cee2e7;
+            color: rgba(37, 133, 138, 75%);
+            text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+            box-shadow: 0 3px #999;
+            ;
         }
 
         .footer-menu {
@@ -215,7 +235,11 @@
         <div class="header-title">Membresía</div>
     </div>
     <div class="content">
-        <div class="membership-title">NUESTRA MEMBRESÍA</div>
+        <div class="membership-title">
+            <a class="nuestra">NUESTRA</a>
+            <a class="membresia">MEMBRESÍA</a>
+        </div>
+        <a class="title-desc">Una membresía con beneficios 365 días del año para que ahorres</a>
         <ul class="benefits-list">
             <li>Precios Member Exclusivos. Para ahorrar siempre</li>
             <li>Domicilios GRATIS ilimitados. En tus compras superiores a $130.000</li>
@@ -223,7 +247,7 @@
             <li>15% OFF en servicios. aplica términos y condiciones</li>
             <li>Siendo Miembro Premium, estás donando un % a peludos que más lo necesitan</li>
         </ul>
-        <button class="purchase-button">Compra - $40.000 al año</button>
+        <a href="#" class="purchase-button">Compra - $40.000 al año</a>
     </div>
 
     <!-- Navigation bar (footer) -->
