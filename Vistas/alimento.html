@@ -27,6 +27,17 @@
         width: 360px;
         height: 800px;
       }
+      .Subtitulo {
+        display: flex; /* Utiliza flexbox para centrar el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        width: 100%; /* Ocupa el ancho completo del contenedor */
+        font-size: 32px; /* Establece el tamaño de fuente a 32px */
+        margin-top: 20px; /* Añade espacio arriba del subtítulo, ajusta según necesites */
+        margin-bottom: 20px; /* Añade espacio debajo del subtítulo, ajusta según necesites */
+        color: rgba(37, 133, 138, 75%);
+        -webkit-text-stroke: 0.2px rgba(193, 216, 218, 0.75);
+        text-shadow: 1px 1px 3px #999;
+      }
 
       .list-container {
         display: flex;
@@ -333,10 +344,10 @@
         />
         <button class="cart-button">
           <img class="carrito-img" src="/src/carrito.png" alt="Carrito" />
-          <!-- Asumiendo que tienes una imagen para el botón del carrito -->
         </button>
       </div>
     </div>
+    <h2 class="Subtitulo">Catálogo Alimentos</h2>
     <div class="list-container">
       <ul class="brand-list">
         <div id="A-group" class="brand-group">
