@@ -1,142 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio - El Hogar de Sensei</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
-    />
-    <style>
-      html {
-        height: 100%;
-        margin: 0;
-        /* Oculta el desbordamiento de la página */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* Establece el color de fondo de la página */
-        border-left: 1px #000;
-      }
 
-      /* Esto es para esconder el desbordamiento en la parte superior e inferior */
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio - El Hogar de Sensei</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-      body {
-        font-family: "Inder", sans-serif;
-        background-color: #fff;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        height: 800px;
-        width: 360px;
-      }
+<body>
+  <div class="contenedor-app">
+    <header class="Header-Inicio"></header>
 
-      header {
-        height: 80px;
-        background-color: #2cb6be;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
-        /* Ajuste para visualización y espacio alrededor del header y footer */
-      }
+    <main>
+      <img src="/src/Logo.png" class="logo" />
+      <a href="/Vistas/register.html" class="button" id="CC">Crear cuenta</a>
+      <a href="/Vistas/login.html" class="button" id="IS">Inicio de Sesión</a>
+      <a href="/Vistas/home-1.html" class="button" id="IcI">Ingresar como invitado</a>
+    </main>
 
-      footer {
-        height: 80px;
-        background-color: #2cb6be;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
-        /* Ajuste para visualización y espacio alrededor del header y footer */
-      }
+    <footer class="Footer-Inicio"></footer>
+  </div>
+</body>
 
-      main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      img.logo {
-        margin-top: 20px;
-        width: 180px;
-        height: auto;
-        margin-bottom: 20px;
-      }
-
-      .button {
-        display: block;
-        width: 280px;
-        height: 80px;
-        margin: 20px;
-        position: relative;
-        font-size: 16px;
-        line-height: 80px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        outline: none;
-        color: #fff;
-        border: none;
-        border-radius: 15px;
-      }
-
-      #IcI {
-        background-color: transparent;
-        color: rgba(37, 133, 138, 75%);
-        text-decoration: underline;
-        text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
-      }
-
-      #CC {
-        background-color: #2cb6be;
-        box-shadow: 0 3px #999;
-      }
-
-      #IS {
-        background-color: #cee2e7;
-        color: rgba(37, 133, 138, 75%);
-        text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
-        box-shadow: 0 3px #999;
-      }
-
-      #CC:hover {
-        background-color: #cee2e7;
-        color: rgba(37, 133, 138, 75%);
-        text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
-      }
-
-      #IS:hover {
-        background-color: #2cb6be;
-        color: #fff;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="contenedor-app">
-      <header></header>
-
-      <main>
-        <img src="/src/Logo.png" class="logo" />
-        <a href="/Vistas/register.html" class="button" id="CC">Crear cuenta</a>
-        <a href="/Vistas/login.html" class="button" id="IS">Inicio de Sesión</a>
-        <a href="/Vistas/home-1.html" class="button" id="IcI"
-          >Ingresar como invitado</a
-        >
-      </main>
-
-      <footer></footer>
-    </div>
-  </body>
 </html>

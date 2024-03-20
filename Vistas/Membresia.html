@@ -1,286 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Membresía - El hogar de Sensei</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
-    />
-    <style>
-      html {
-        height: 100%;
-        margin: 0;
-        /* Oculta el desbordamiento de la página */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* Establece el color de fondo de la página */
-      }
 
-      body {
-        font-family: "Inder", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        width: 360px;
-        height: 800px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membresía - El hogar de Sensei</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-      .header {
-        width: 100%;
-        background-color: #2cb6be;
-        color: white;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
-      }
-
-      .back-arrow {
-        font-size: 24px;
-        margin-right: 20px;
-        margin-top: 20px;
-        text-decoration: none;
-        color: white;
-      }
-
-      .header-title {
-        font-size: 24px;
-        flex-grow: 1;
-        margin-top: 20px;
-      }
-
-      .content {
-        flex-grow: 1;
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-      }
-
-      .membership-card {
-        background: white;
-        border-radius: 25px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: left;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .membership-card::before,
-      .membership-card::after {
-        content: "";
-        position: absolute;
-        background: #2cb6be;
-        z-index: -1;
-      }
-
-      .membership-card::before {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 30px;
-        border-top-left-radius: 25px;
-      }
-
-      .membership-card::after {
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 30px;
-        border-bottom-right-radius: 25px;
-      }
-
-      .membership-title {
-        text-align: left;
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 15px;
-        margin-top: 15px;
-        font-weight: bold;
-      }
-
-      .nuestra {
-        color: #2cb6be;
-      }
-
-      .title-desc {
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-
-      .membership-description,
-      .benefits-list {
-        font-size: 14px;
-        color: #333;
-        line-height: 1.6;
-        margin-bottom: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-        list-style: none;
-        padding: 30px;
-        border-radius: 20px;
-        border: 2px solid #2cb6be;
-      }
-
-      .benefits-list li {
-        position: relative;
-        padding-left: 20px;
-        margin-bottom: 10px;
-      }
-
-      .benefits-list li::before {
-        content: "•";
-        color: black;
-        position: absolute;
-        left: 0;
-        top: 0;
-        font-size: 22px;
-      }
-
-      .purchase-button {
-        background-color: #2cb6be;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 18px;
-        border-radius: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-decoration: none;
-      }
-
-      .purchase-button:hover {
-        background-color: #cee2e7;
-        color: rgba(37, 133, 138, 75%);
-        text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
-        box-shadow: 0 3px #999;
-      }
-
-      .footer-menu {
-        display: flex;
-        position: fixed;
-        justify-content: space-around;
-        background-color: #2cb6be;
-        padding: 10px 0;
-        bottom: 0;
-        height: 80px;
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
-        box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
-      }
-
-      .footer-menu a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .nav-bar {
-        background-color: #2cb6be;
-        display: flex;
-        justify-content: space-around;
-        position: fixed;
-        bottom: 0;
-        width: 360px;
-        height: 80px;
-        padding: 10px;
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
-        box-shadow: 0px -4px 6px -1px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-bar a {
-        text-decoration: none;
-        color: white;
-        font-family: Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 10px;
-        flex-direction: column;
-        height: 80px;
-      }
-
-      .nav-bar img {
-        width: 50px;
-        height: 50px;
-      }
-
-      .nav-bar img.Inicio {
-        margin-bottom: 0px;
-        justify-items: center;
-        width: 50px;
-        height: 50px;
-      }
-
-      .nav-bar a:hover {
-        border: 1px solid rgba(203, 201, 224, 0.8);
-        border-radius: 10px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="header">
-      <a href="#" class="back-arrow">←</a>
-      <div class="header-title">Membresía</div>
+<body>
+  <div class="header">
+    <a href="#" class="back-arrow">←</a>
+    <div class="header-title">Membresía</div>
+  </div>
+  <div class="content">
+    <div class="membership-title">
+      <a class="nuestra">NUESTRA</a>
+      <a class="membresia">MEMBRESÍA</a>
     </div>
-    <div class="content">
-      <div class="membership-title">
-        <a class="nuestra">NUESTRA</a>
-        <a class="membresia">MEMBRESÍA</a>
-      </div>
-      <a class="title-desc"
-        >Una membresía con beneficios 365 días del año para que ahorres</a
-      >
-      <ul class="benefits-list">
-        <li>Precios Member Exclusivos. Para ahorrar siempre</li>
-        <li>
-          Domicilios GRATIS ilimitados. En tus compras superiores a $130.000
-        </li>
-        <li>Envíos recurrentes comprando con AUTOenvío</li>
-        <li>15% OFF en servicios. aplica términos y condiciones</li>
-        <li>
-          Siendo Miembro Premium, estás donando un % a peludos que más lo
-          necesitan
-        </li>
-      </ul>
-      <a href="#" class="purchase-button">Compra - $40.000 al año</a>
-    </div>
+    <a class="title-desc">Una membresía con beneficios 365 días del año para que ahorres</a>
+    <ul class="benefits-list">
+      <li>Precios Member Exclusivos. Para ahorrar siempre</li>
+      <li>
+        Domicilios GRATIS ilimitados. En tus compras superiores a $130.000
+      </li>
+      <li>Envíos recurrentes comprando con AUTOenvío</li>
+      <li>15% OFF en servicios. aplica términos y condiciones</li>
+      <li>
+        Siendo Miembro Premium, estás donando un % a peludos que más lo
+        necesitan
+      </li>
+    </ul>
+    <a href="#" class="purchase-button">Compra - $40.000 al año</a>
+  </div>
 
-    <!-- Navigation bar (footer) -->
-    <div class="nav-bar">
-      <a href="/Vistas/home-1.html"
-        ><img src="/src/inicio.png" alt="Inicio" /><span>Inicio</span></a
-      >
-      <a href="#"
-        ><img src="/src/compras.png" alt="Mis Compras" /><span
-          >Mis Compras</span
-        ></a
-      >
-      <a href="#"
-        ><img src="/src/descuento.png" alt="Promociones" /><span
-          >Promociones</span
-        ></a
-      >
-      <a href="/Vistas/Membresia.html"
-        ><img src="/src/membresia.png" alt="Membresía" /><span
-          >Membresía</span
-        ></a
-      >
-      <a href="#"
-        ><img src="/src/cuenta.png" alt="Cuenta" /><span>Cuenta</span></a
-      >
-    </div>
-  </body>
+  <!-- Navigation bar (footer) -->
+  <div class="nav-bar">
+    <a href="/Vistas/home-1.html"><img src="/src/inicio.png" alt="Inicio" /><span>Inicio</span></a>
+    <a href="#"><img src="/src/compras.png" alt="Mis Compras" /><span>Mis Compras</span></a>
+    <a href="#"><img src="/src/descuento.png" alt="Promociones" /><span>Promociones</span></a>
+    <a href="/Vistas/Membresia.html"><img src="/src/membresia.png" alt="Membresía" /><span>Membresía</span></a>
+    <a href="#"><img src="/src/cuenta.png" alt="Cuenta" /><span>Cuenta</span></a>
+  </div>
+</body>
+
 </html>

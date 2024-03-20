@@ -1,606 +1,266 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuidadohigiene - El hogar de Sensei</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
-    />
-    <style>
-      html {
-        height: 800px;
-        margin: 0;
-        /* Oculta el desbordamiento de la página */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* Establece el color de fondo de la página */
-      }
 
-      body {
-        font-family: "Inder", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        width: 360px;
-        height: 800px;
-        padding-bottom: 80px;
-      }
-      .Subtitulo {
-        display: flex; /* Utiliza flexbox para centrar el contenido */
-        justify-content: center; /* Centra horizontalmente el contenido */
-        width: 100%; /* Ocupa el ancho completo del contenedor */
-        font-size: 32px; /* Establece el tamaño de fuente a 32px */
-        margin-top: 20px; /* Añade espacio arriba del subtítulo, ajusta según necesites */
-        margin-bottom: 20px; /* Añade espacio debajo del subtítulo, ajusta según necesites */
-        color: rgba(37, 133, 138, 75%);
-        -webkit-text-stroke: 0.2px rgba(193, 216, 218, 0.75);
-        text-shadow: 1px 1px 3px #999;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuidadohigiene - El hogar de Sensei</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-      .list-container {
-        display: flex;
-        height: 100vh;
-        /* Adjust the height as needed */
-        margin-bottom: 80px;
-        flex-grow: 1;
-        overflow-y: auto; /* Enables scrolling on the y-axis */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-        padding-bottom: 80px; /* Same height as your fixed footer */
-        position: relative; /* For z-index stacking context */
-        z-index: 1;
-      }
-
-      .brand-list {
-        flex-grow: 1;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        /* This will make the list scrollable */
-        background-color: transparent;
-        list-style: none;
-        /* Removes default list styling */
-        padding: 0;
-        margin-top: 5px;
-        margin-bottom: 0px;
-      }
-
-      .brand-item {
-        padding: 10px;
-        /*border-top: 1px solid rgba(37, 133, 138, 75%);*/
-        border-bottom: 1px solid rgba(37, 133, 138, 75%);
-        border-radius: 10px;
-        color: black;
-        text-decoration: none;
-        /* Border for each item */
-        /* Add other styles like fonts, colors etc. */
-        display: flex;
-        margin: 5px;
-      }
-
-      .brand-item:hover {
-        color: #f4f4f4;
-        background-color: rgba(37, 133, 138, 75%);
-        box-shadow: 3px 3px 6px #999;
-      }
-
-      .alphabet-list {
-        /* Styling for the alphabet list */
-        overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f4f4f4;
-      }
-
-      .alphabet-list button {
-        display: block;
-        border-color: transparent;
-        border-bottom: 1px solid rgba(37, 133, 138, 75%);
-        padding: 5px;
-        margin: 5px 0;
-        border-radius: 5px;
-        /* Additional styles for the alphabet letters */
-      }
-      .alphabet-list button:hover {
-        color: #f4f4f4;
-        background-color: rgba(37, 133, 138, 75%);
-        box-shadow: 3px 3px 6px #999;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1; /* Track background */
-        border-radius: 10px; /* Makes the track corners rounded */
-      }
-
-      /* This styles the actual scrollbar handle */
-      ::-webkit-scrollbar-thumb {
-        background: rgba(37, 133, 138, 75%); /* Handle color */
-        border-radius: 10px; /* Makes the handle corners rounded */
-        border: 3px solid #f1f1f1; /* Adds a border around the handle */
-      }
-
-      /* Styles the handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(37, 133, 138, 100%); /* Handle color on hover */
-      }
-
-      /* This changes the size of the scrollbar */
-      ::-webkit-scrollbar {
-        width: 12px; /* Width of the vertical scrollbar */
-        height: 12px; /* Height of the horizontal scrollbar */
-      }
-
-      .nav-bar {
-        background-color: #2cb6be;
-        position: fixed;
-        bottom: 0;
-        z-index: 2;
-        /* Your desired background color */
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
-        /* Rounded corners */
-        display: flex;
-        /* Use flexbox for alignment */
-        justify-content: space-around;
-        /* Evenly space the items */
-        /* Some padding around the items */
-        /* Margin around the navigation bar */
-        list-style-type: none;
-        /* Remove default list styles */
-        width: 360px;
-        height: 80px;
-        box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
-        padding-left: 0;
-        margin-left: 0;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-      }
-
-      .nav-bar li {
-        display: inline;
-        /* Display list items inline */
-        padding: 0;
-        margin: 0;
-        margin-top: 5px;
-      }
-
-      .nav-bar a {
-        text-decoration: none;
-        /* Remove underline from links */
-        color: white;
-        /* Text color for links */
-        font-family: Arial, sans-serif;
-        /* Font style for links */
-        display: flex;
-        /* Use flex to align icon and text */
-        align-items: center;
-        /* Align items vertically */
-        gap: 5px;
-        /* Space between icon and text */
-        font-size: 10px;
-        flex-direction: column;
-        height: 80px;
-        margin-top: 5px;
-      }
-
-      .nav-bar img {
-        width: 50px;
-        /* Example size, adjust as needed */
-        height: 50px;
-        /* Maintain aspect ratio */
-      }
-
-      .nav-bar img.Inicio {
-        margin-bottom: 0px;
-        justify-items: center;
-        width: 50px;
-        height: 50px;
-      }
-
-      /* Hover effect for the links */
-      .nav-bar a:hover {
-        border: 1px solid rgba(203, 201, 224, 0.8);
-        /* White border on hover */
-        border-radius: 10px;
-        /* Rounded corners for the border */
-        /* Adjust padding to maintain the overall size */
-      }
-
-      .header {
-        background-color: #2cb6be;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        display: flex;
-        align-items: center;
-        height: 200px;
-        flex-direction: column;
-        /* Align children vertically */
-        justify-content: center;
-        box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
-        margin-bottom: 10px;
-      }
-
-      .logo-slogan {
-        display: flex;
-        align-items: center;
-        /* Align logo and slogan horizontally */
-        margin-bottom: 10px;
-        /* Adjust as needed */
-      }
-
-      .logo {
-        width: 150px;
-        height: 150px;
-        display: flex;
-        margin-right: 0px;
-        margin-left: 0px;
-      }
-
-      .nombre {
-        text-align: left;
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .slogan {
-        text-align: left;
-        font-size: 8px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .nombre,
-      .slogan {
-        display: block;
-        /* Make them stack vertically */
-      }
-
-      .search-box {
-        display: flex;
-        /* Establece el contenedor como un contenedor flex */
-        justify-content: center;
-        /* Centra horizontalmente el contenido */
-        align-items: center;
-        /* Centra verticalmente el contenido */
-        /* O 'block' si prefieres */
-      }
-
-      .search-input {
-        width: 100%;
-        /* O el ancho que prefieras */
-        padding: 10px;
-        padding-left: 40px;
-        /* Espacio para la lupa */
-        border: 1px;
-        border-color: rgba(37, 133, 138, 75%);
-        border-radius: 5px;
-        /* Para bordes redondeados */
-        background-image: url("/src/lupita.png");
-        background-position: 10px center;
-        background-repeat: no-repeat;
-        transition: background-image 0.5s ease-in-out,
-          background-position 0.5s ease, padding-left 0.5s ease;
-        /* Transición suave para el fondo y el padding */
-        /* Otros estilos para tu input */
-        box-shadow: 0 3px 6px -1px rgba(70, 69, 69, 0.9);
-        flex-grow: 1;
-      }
-
-      .search-input:focus {
-        background-image: none;
-        /* Quita la imagen de la lupa */
-        padding-left: 10px;
-        border-color: rgba(37, 133, 138, 100%);
-        outline: none;
-        /* Mueve el texto al principio */
-        /* Puedes cambiar el color del borde o del fondo al enfocar si lo deseas */
-      }
-
-      /* Para que la transición ocurra en el placeholder también */
-      ::placeholder {
-        transition: opacity 0.5s ease;
-      }
-
-      .search-input:focus::placeholder {
-        opacity: 0;
-        /* Hace el placeholder completamente transparente */
-      }
-
-      .cart-button {
-        border: none;
-        cursor: pointer;
-        width: 40px;
-        /* El ancho deseado para tu botón de carrito */
-        height: 40px;
-        /* La altura deseada para tu botón de carrito */
-        background-color: transparent;
-        /* O cualquier otro color que prefieras */
-        /* Ajusta la distancia entre el input y el botón del carrito
-
-            /* Invierte los colores de la imagen */
-
-        /* Agrega sombra: horizontal, vertical, blur, color */
-        margin-left: 8px;
-        transition: border-radius 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .cart-button:hover {
-        filter: drop-shadow(0 3px 10px rgba(70, 69, 69, 0.9));
-        /* Opcional: Agrega una sombra suave */
-      }
-
-      .carrito-img {
-        height: 25px;
-        width: 25px;
-        filter: invert(100%) drop-shadow(0 3px 6px rgba(121, 120, 120, 0.75));
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="header">
-      <div class="logo-slogan">
-        <img src="/src/logo.png" class="logo" />
-        <div>
-          <span class="nombre">El hogar de Sensei</span>
-          <span class="slogan">Nutrición y Salud</span>
-        </div>
-      </div>
-      <div class="search-box">
-        <input
-          type="text"
-          class="search-input"
-          placeholder="¿Qué Producto Buscas?"
-        />
-        <button class="cart-button">
-          <img class="carrito-img" src="/src/carrito.png" alt="Carrito" />
-        </button>
+<body>
+  <div class="header">
+    <div class="logo-slogan">
+      <img src="/src/logo.png" class="logo" />
+      <div>
+        <span class="nombre">El hogar de Sensei</span>
+        <span class="slogan">Nutrición y Salud</span>
       </div>
     </div>
-    <h2 class="Subtitulo">Catálogo Cuidado e Higiene</h2>
-    <div class="list-container">
-      <ul class="brand-list">
-        <div id="A-group" class="brand-group">
-          <h2>A</h2>
-          <a href="#" class="brand-item"> AGILITY GOLD</a>
-          <a href="#" class="brand-item"> ANOTHER BRAND A</a>
-        </div>
-        <div id="B-group" class="brand-group">
-          <h2>B</h2>
-
-          <a href="#" class="brand-item"> B</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND B</a>
-        </div>
-        <div id="C-group" class="brand-group">
-          <h2>C</h2>
-
-          <a href="#" class="brand-item"> CHUNKY</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND C</a>
-        </div>
-        <div id="D-group" class="brand-group">
-          <h2>D</h2>
-
-          <a href="#" class="brand-item"> D</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND D</a>
-        </div>
-        <div id="E-group" class="brand-group">
-          <h2>E</h2>
-
-          <a href="#" class="brand-item"> E</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND E</a>
-        </div>
-        <div id="F-group" class="brand-group">
-          <h2>F</h2>
-
-          <a href="#" class="brand-item"> F</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND F</a>
-        </div>
-        <div id="G-group" class="brand-group">
-          <h2>G</h2>
-
-          <a href="#" class="brand-item"> G</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND G</a>
-        </div>
-        <div id="H-group" class="brand-group">
-          <h2>H</h2>
-
-          <a href="#" class="brand-item"> H</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND H</a>
-        </div>
-        <div id="I-group" class="brand-group">
-          <h2>I</h2>
-
-          <a href="#" class="brand-item"> I</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND I</a>
-        </div>
-        <div id="J-group" class="brand-group">
-          <h2>J</h2>
-
-          <a href="#" class="brand-item"> J</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND J</a>
-        </div>
-        <div id="K-group" class="brand-group">
-          <h2>K</h2>
-
-          <a href="#" class="brand-item"> K</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND K</a>
-        </div>
-        <div id="L-group" class="brand-group">
-          <h2>L</h2>
-
-          <a href="#" class="brand-item"> L</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND L</a>
-        </div>
-        <div id="M-group" class="brand-group">
-          <h2>M</h2>
-
-          <a href="#" class="brand-item"> M</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND M</a>
-        </div>
-        <div id="N-group" class="brand-group">
-          <h2>N</h2>
-
-          <a href="#" class="brand-item"> N</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND N</a>
-        </div>
-        <div id="O-group" class="brand-group">
-          <h2>O</h2>
-
-          <a href="#" class="brand-item"> O</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND O</a>
-        </div>
-        <div id="P-group" class="brand-group">
-          <h2>P</h2>
-
-          <a href="#" class="brand-item"> P</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND P</a>
-        </div>
-        <div id="Q-group" class="brand-group">
-          <h2>Q</h2>
-
-          <a href="#" class="brand-item"> Q</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND Q</a>
-        </div>
-        <div id="R-group" class="brand-group">
-          <h2>R</h2>
-
-          <a href="#" class="brand-item"> R</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND R</a>
-        </div>
-        <div id="S-group" class="brand-group">
-          <h2>S</h2>
-
-          <a href="#" class="brand-item"> S</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND S</a>
-        </div>
-        <div id="T-group" class="brand-group">
-          <h2>T</h2>
-
-          <a href="#" class="brand-item"> T</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND T</a>
-        </div>
-        <div id="U-group" class="brand-group">
-          <h2>U</h2>
-
-          <a href="#" class="brand-item"> U</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND U</a>
-        </div>
-        <div id="V-group" class="brand-group">
-          <h2>V</h2>
-
-          <a href="#" class="brand-item"> V</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND V</a>
-        </div>
-        <div id="W-group" class="brand-group">
-          <h2>W</h2>
-
-          <a href="#" class="brand-item"> W</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND W</a>
-        </div>
-        <div id="X-group" class="brand-group">
-          <h2>X</h2>
-
-          <a href="#" class="brand-item"> X</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND X</a>
-        </div>
-        <div id="Y-group" class="brand-group">
-          <h2>Y</h2>
-
-          <a href="#" class="brand-item"> Y</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND Y</a>
-        </div>
-        <div id="Z-group" class="brand-group">
-          <h2>Z</h2>
-
-          <a href="#" class="brand-item"> Z</a>
-
-          <a href="#" class="brand-item"> ANOTHER BRAND Z</a>
-        </div>
-
-        <!-- Add as many list items as needed -->
-      </ul>
-      <div class="alphabet-list">
-        <button onclick="scrollToGroup('A-group')">A</button>
-        <button onclick="scrollToGroup('B-group')">B</button>
-        <button onclick="scrollToGroup('C-group')">C</button>
-        <button onclick="scrollToGroup('D-group')">D</button>
-        <button onclick="scrollToGroup('E-group')">E</button>
-        <button onclick="scrollToGroup('F-group')">F</button>
-        <button onclick="scrollToGroup('G-group')">G</button>
-        <button onclick="scrollToGroup('H-group')">H</button>
-        <button onclick="scrollToGroup('I-group')">I</button>
-        <button onclick="scrollToGroup('J-group')">J</button>
-        <button onclick="scrollToGroup('K-group')">K</button>
-        <button onclick="scrollToGroup('L-group')">L</button>
-        <button onclick="scrollToGroup('M-group')">M</button>
-        <button onclick="scrollToGroup('N-group')">N</button>
-        <button onclick="scrollToGroup('O-group')">O</button>
-        <button onclick="scrollToGroup('P-group')">P</button>
-        <button onclick="scrollToGroup('Q-group')">Q</button>
-        <button onclick="scrollToGroup('R-group')">R</button>
-        <button onclick="scrollToGroup('S-group')">S</button>
-        <button onclick="scrollToGroup('T-group')">T</button>
-        <button onclick="scrollToGroup('U-group')">U</button>
-        <button onclick="scrollToGroup('V-group')">V</button>
-        <button onclick="scrollToGroup('W-group')">W</button>
-        <button onclick="scrollToGroup('X-group')">X</button>
-        <button onclick="scrollToGroup('Y-group')">Y</button>
-        <button onclick="scrollToGroup('Z-group')">Z</button>
-        <!-- Add all alphabet letters -->
-      </div>
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="¿Qué Producto Buscas?" />
+      <button class="cart-button">
+        <img class="carrito-img" src="/src/carrito.png" alt="Carrito" />
+      </button>
     </div>
+  </div>
+  <h2 class="Subtitulo">Catálogo Cuidado e Higiene</h2>
+  <div class="list-container">
+    <ul class="brand-list">
+      <div id="A-group" class="brand-group">
+        <h2>A</h2>
+        <a href="#" class="brand-item"> AGILITY GOLD</a>
+        <a href="#" class="brand-item"> ANOTHER BRAND A</a>
+      </div>
+      <div id="B-group" class="brand-group">
+        <h2>B</h2>
 
-    <!-- Navigation bar (footer) -->
-    <ul class="nav-bar">
-      <li>
-        <a href="/Vistas/home-1.html"
-          ><img src="/src/logo.png" class="Inicio" />Inicio</a
-        >
-      </li>
-      <li>
-        <a href="#"><img src="/src/compras.png" /> Mis Compras</a>
-      </li>
-      <li>
-        <a href="#"><img src="/src/descuento.png" /> Promociones</a>
-      </li>
-      <li>
-        <a href="/Vistas/Membresia.html"
-          ><img src="/src/membresia.png" /> Membresía</a
-        >
-      </li>
-      <li>
-        <a href="#"><img src="/src/cuenta.png" /> Cuenta</a>
-      </li>
+        <a href="#" class="brand-item"> B</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND B</a>
+      </div>
+      <div id="C-group" class="brand-group">
+        <h2>C</h2>
+
+        <a href="#" class="brand-item"> CHUNKY</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND C</a>
+      </div>
+      <div id="D-group" class="brand-group">
+        <h2>D</h2>
+
+        <a href="#" class="brand-item"> D</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND D</a>
+      </div>
+      <div id="E-group" class="brand-group">
+        <h2>E</h2>
+
+        <a href="#" class="brand-item"> E</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND E</a>
+      </div>
+      <div id="F-group" class="brand-group">
+        <h2>F</h2>
+
+        <a href="#" class="brand-item"> F</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND F</a>
+      </div>
+      <div id="G-group" class="brand-group">
+        <h2>G</h2>
+
+        <a href="#" class="brand-item"> G</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND G</a>
+      </div>
+      <div id="H-group" class="brand-group">
+        <h2>H</h2>
+
+        <a href="#" class="brand-item"> H</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND H</a>
+      </div>
+      <div id="I-group" class="brand-group">
+        <h2>I</h2>
+
+        <a href="#" class="brand-item"> I</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND I</a>
+      </div>
+      <div id="J-group" class="brand-group">
+        <h2>J</h2>
+
+        <a href="#" class="brand-item"> J</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND J</a>
+      </div>
+      <div id="K-group" class="brand-group">
+        <h2>K</h2>
+
+        <a href="#" class="brand-item"> K</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND K</a>
+      </div>
+      <div id="L-group" class="brand-group">
+        <h2>L</h2>
+
+        <a href="#" class="brand-item"> L</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND L</a>
+      </div>
+      <div id="M-group" class="brand-group">
+        <h2>M</h2>
+
+        <a href="#" class="brand-item"> M</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND M</a>
+      </div>
+      <div id="N-group" class="brand-group">
+        <h2>N</h2>
+
+        <a href="#" class="brand-item"> N</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND N</a>
+      </div>
+      <div id="O-group" class="brand-group">
+        <h2>O</h2>
+
+        <a href="#" class="brand-item"> O</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND O</a>
+      </div>
+      <div id="P-group" class="brand-group">
+        <h2>P</h2>
+
+        <a href="#" class="brand-item"> P</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND P</a>
+      </div>
+      <div id="Q-group" class="brand-group">
+        <h2>Q</h2>
+
+        <a href="#" class="brand-item"> Q</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND Q</a>
+      </div>
+      <div id="R-group" class="brand-group">
+        <h2>R</h2>
+
+        <a href="#" class="brand-item"> R</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND R</a>
+      </div>
+      <div id="S-group" class="brand-group">
+        <h2>S</h2>
+
+        <a href="#" class="brand-item"> S</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND S</a>
+      </div>
+      <div id="T-group" class="brand-group">
+        <h2>T</h2>
+
+        <a href="#" class="brand-item"> T</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND T</a>
+      </div>
+      <div id="U-group" class="brand-group">
+        <h2>U</h2>
+
+        <a href="#" class="brand-item"> U</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND U</a>
+      </div>
+      <div id="V-group" class="brand-group">
+        <h2>V</h2>
+
+        <a href="#" class="brand-item"> V</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND V</a>
+      </div>
+      <div id="W-group" class="brand-group">
+        <h2>W</h2>
+
+        <a href="#" class="brand-item"> W</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND W</a>
+      </div>
+      <div id="X-group" class="brand-group">
+        <h2>X</h2>
+
+        <a href="#" class="brand-item"> X</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND X</a>
+      </div>
+      <div id="Y-group" class="brand-group">
+        <h2>Y</h2>
+
+        <a href="#" class="brand-item"> Y</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND Y</a>
+      </div>
+      <div id="Z-group" class="brand-group">
+        <h2>Z</h2>
+
+        <a href="#" class="brand-item"> Z</a>
+
+        <a href="#" class="brand-item"> ANOTHER BRAND Z</a>
+      </div>
+
+      <!-- Add as many list items as needed -->
     </ul>
-    <script src="/script.js"></script>
-  </body>
+    <div class="alphabet-list">
+      <button onclick="scrollToGroup('A-group')">A</button>
+      <button onclick="scrollToGroup('B-group')">B</button>
+      <button onclick="scrollToGroup('C-group')">C</button>
+      <button onclick="scrollToGroup('D-group')">D</button>
+      <button onclick="scrollToGroup('E-group')">E</button>
+      <button onclick="scrollToGroup('F-group')">F</button>
+      <button onclick="scrollToGroup('G-group')">G</button>
+      <button onclick="scrollToGroup('H-group')">H</button>
+      <button onclick="scrollToGroup('I-group')">I</button>
+      <button onclick="scrollToGroup('J-group')">J</button>
+      <button onclick="scrollToGroup('K-group')">K</button>
+      <button onclick="scrollToGroup('L-group')">L</button>
+      <button onclick="scrollToGroup('M-group')">M</button>
+      <button onclick="scrollToGroup('N-group')">N</button>
+      <button onclick="scrollToGroup('O-group')">O</button>
+      <button onclick="scrollToGroup('P-group')">P</button>
+      <button onclick="scrollToGroup('Q-group')">Q</button>
+      <button onclick="scrollToGroup('R-group')">R</button>
+      <button onclick="scrollToGroup('S-group')">S</button>
+      <button onclick="scrollToGroup('T-group')">T</button>
+      <button onclick="scrollToGroup('U-group')">U</button>
+      <button onclick="scrollToGroup('V-group')">V</button>
+      <button onclick="scrollToGroup('W-group')">W</button>
+      <button onclick="scrollToGroup('X-group')">X</button>
+      <button onclick="scrollToGroup('Y-group')">Y</button>
+      <button onclick="scrollToGroup('Z-group')">Z</button>
+      <!-- Add all alphabet letters -->
+    </div>
+  </div>
+
+  <!-- Navigation bar (footer) -->
+  <ul class="nav-bar">
+    <li>
+      <a href="/Vistas/home-1.html"><img src="/src/logo.png" class="Inicio" />Inicio</a>
+    </li>
+    <li>
+      <a href="#"><img src="/src/compras.png" /> Mis Compras</a>
+    </li>
+    <li>
+      <a href="#"><img src="/src/descuento.png" /> Promociones</a>
+    </li>
+    <li>
+      <a href="/Vistas/Membresia.html"><img src="/src/membresia.png" /> Membresía</a>
+    </li>
+    <li>
+      <a href="#"><img src="/src/cuenta.png" /> Cuenta</a>
+    </li>
+  </ul>
+  <script src="/script.js"></script>
+</body>
+
 </html>

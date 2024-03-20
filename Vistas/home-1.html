@@ -1,367 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - El hogar de Sensei</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
-    />
-    <style>
-      html {
-        height: 100%;
-        margin: 0;
-        /* Oculta el desbordamiento de la página */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* Establece el color de fondo de la página */
-      }
 
-      body {
-        font-family: "Inder", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        width: 360px;
-        height: 800px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - El hogar de Sensei</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-      .header {
-        background-color: #2cb6be;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        display: flex;
-        align-items: center;
-        height: 200px;
-        flex-direction: column;
-        /* Align children vertically */
-        justify-content: center;
-        box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
-        margin-bottom: 20px;
-      }
-
-      .logo-slogan {
-        display: flex;
-        align-items: center;
-        /* Align logo and slogan horizontally */
-        margin-bottom: 10px;
-        /* Adjust as needed */
-      }
-
-      .logo {
-        width: 150px;
-        height: 150px;
-        display: flex;
-        margin-right: 0px;
-        margin-left: 0px;
-      }
-
-      .nombre {
-        text-align: left;
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .slogan {
-        text-align: left;
-        font-size: 8px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .nombre,
-      .slogan {
-        display: block;
-        /* Make them stack vertically */
-      }
-
-      .search-box {
-        display: flex;
-        /* Establece el contenedor como un contenedor flex */
-        justify-content: center;
-        /* Centra horizontalmente el contenido */
-        align-items: center;
-        /* Centra verticalmente el contenido */
-        /* O 'block' si prefieres */
-      }
-
-      .search-input {
-        width: 100%;
-        /* O el ancho que prefieras */
-        padding: 10px;
-        padding-left: 40px;
-        /* Espacio para la lupa */
-        border: 1px;
-        border-color: rgba(37, 133, 138, 75%);
-        border-radius: 5px;
-        /* Para bordes redondeados */
-        background-image: url("/src/lupita.png");
-        background-position: 10px center;
-        background-repeat: no-repeat;
-        transition: background-image 0.5s ease-in-out,
-          background-position 0.5s ease, padding-left 0.5s ease;
-        /* Transición suave para el fondo y el padding */
-        /* Otros estilos para tu input */
-        box-shadow: 0 3px 6px -1px rgba(70, 69, 69, 0.9);
-        flex-grow: 1;
-      }
-
-      .search-input:focus {
-        background-image: none;
-        /* Quita la imagen de la lupa */
-        padding-left: 10px;
-        border-color: rgba(37, 133, 138, 100%);
-        outline: none;
-        /* Mueve el texto al principio */
-        /* Puedes cambiar el color del borde o del fondo al enfocar si lo deseas */
-      }
-
-      /* Para que la transición ocurra en el placeholder también */
-      ::placeholder {
-        transition: opacity 0.5s ease;
-      }
-
-      .search-input:focus::placeholder {
-        opacity: 0;
-        /* Hace el placeholder completamente transparente */
-      }
-
-      .cart-button {
-        border: none;
-        cursor: pointer;
-        width: 40px;
-        /* El ancho deseado para tu botón de carrito */
-        height: 40px;
-        /* La altura deseada para tu botón de carrito */
-        background-color: transparent;
-        /* O cualquier otro color que prefieras */
-        /* Ajusta la distancia entre el input y el botón del carrito
-
-            /* Invierte los colores de la imagen */
-
-        /* Agrega sombra: horizontal, vertical, blur, color */
-        margin-left: 8px;
-        transition: border-radius 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .cart-button:hover {
-        filter: drop-shadow(0 3px 10px rgba(70, 69, 69, 0.9));
-        /* Opcional: Agrega una sombra suave */
-      }
-
-      .carrito-img {
-        height: 25px;
-        width: 25px;
-        filter: invert(100%) drop-shadow(0 3px 6px rgba(121, 120, 120, 0.75));
-      }
-
-      .category {
-        display: flex;
-        justify-content: flex-start;
-        gap: 10px;
-        margin: 20px;
-        padding-top: 5px;
-      }
-
-      .categoria-perro {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: bolder;
-      }
-
-      .category-item {
-        margin-top: 15px;
-        text-align: center;
-        display: inline-block;
-        border-radius: 100%;
-        border-color: #000;
-        margin-left: 15px;
-        margin-right: 15px;
-      }
-
-      .category-link {
-        /* Make the link take up the entire container */
-        text-align: center;
-        /* Center the text */
-        text-decoration: none;
-        /* Remove underline from link */
-        color: inherit;
-        /* The text color inherits from the parent element */
-        padding: 10px;
-        /* Add some padding */
-        border-radius: 10px;
-        /* Optional: if you want rounded corners */
-        transition: background-color 0.3s;
-        /* For a smooth color transition */
-      }
-
-      .category-link:hover,
-      .category-link:focus {
-        background-color: #eee;
-        /* Change color on hover/focus for a button-like feedback */
-        outline: none;
-        /* Removes the outline */
-      }
-
-      .category-item img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        filter: drop-shadow(3px 6px 3px rgba(70, 69, 69, 0.5));
-      }
-
-      .category-item p {
-        font-size: 0.9rem;
-      }
-
-      .footer-menu {
-        display: flex;
-        position: fixed;
-        justify-content: space-around;
-        background-color: #2cb6be;
-        padding: 10px 0;
-        bottom: 0;
-        height: 80px;
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
-        box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
-      }
-
-      .footer-menu a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .nav-bar {
-        background-color: #2cb6be;
-        /* Your desired background color */
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
-        /* Rounded corners */
-        display: flex;
-        /* Use flexbox for alignment */
-        justify-content: space-around;
-        /* Evenly space the items */
-        padding: 10px;
-        /* Some padding around the items */
-        /* Margin around the navigation bar */
-        list-style-type: none;
-        /* Remove default list styles */
-        width: 360px;
-        height: 80px;
-        margin: 0px;
-        box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
-      }
-
-      .nav-bar li {
-        display: inline;
-        /* Display list items inline */
-      }
-
-      .nav-bar a {
-        text-decoration: none;
-        /* Remove underline from links */
-        color: white;
-        /* Text color for links */
-        font-family: Arial, sans-serif;
-        /* Font style for links */
-        display: flex;
-        /* Use flex to align icon and text */
-        align-items: center;
-        /* Align items vertically */
-        gap: 5px;
-        /* Space between icon and text */
-        font-size: 10px;
-        flex-direction: column;
-        height: 80px;
-      }
-
-      .nav-bar img {
-        width: 50px;
-        /* Example size, adjust as needed */
-        height: 50px;
-        /* Maintain aspect ratio */
-      }
-
-      .nav-bar img.Inicio {
-        margin-bottom: 0px;
-        justify-items: center;
-        width: 50px;
-        height: 50px;
-      }
-
-      /* Hover effect for the links */
-      .nav-bar a:hover {
-        border: 1px solid rgba(203, 201, 224, 0.8);
-        /* White border on hover */
-        border-radius: 10px;
-        /* Rounded corners for the border */
-        /* Adjust padding to maintain the overall size */
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="header">
-      <div class="logo-slogan">
-        <img src="/src/logo.png" class="logo" />
-        <div>
-          <span class="nombre">El hogar de Sensei</span>
-          <span class="slogan">Nutrición y Salud</span>
-        </div>
-      </div>
-      <div class="search-box">
-        <input
-          type="text"
-          class="search-input"
-          placeholder="¿Qué necesita tu mascota?"
-        />
-        <button class="cart-button">
-          <img class="carrito-img" src="/src/carrito.png" alt="Carrito" />
-          <!-- Asumiendo que tienes una imagen para el botón del carrito -->
-        </button>
+<body>
+  <div class="header">
+    <div class="logo-slogan">
+      <img src="/src/logo.png" class="logo" />
+      <div>
+        <span class="nombre">El hogar de Sensei</span>
+        <span class="slogan">Nutrición y Salud</span>
       </div>
     </div>
-
-    <div class="categories">
-      <a class="categoria-perro">Categorías</a>
-      <div class="category">
-        <div class="category-item">
-          <a href="/Vistas/Alimento.html" class="category-link">
-            <img src="/src/Alimento.png" alt="Alimento" />
-            <p>Alimento</p>
-          </a>
-        </div>
-        <div class="category-item">
-          <a href="" class="category-link">
-            <img src="/src/Snack.png" alt="Snacks" />
-            <p>Snacks</p>
-          </a>
-        </div>
-        <div class="category-item">
-          <a href="" class="category-link">
-            <img src="/src/Farmapet.png" alt="FarmaPet" />
-            <p>FarmaPet</p>
-          </a>
-        </div>
-      </div>
-      <div class="category">
-        <div class="category-item">
-          <a href="" class="category-link">
-            <img src="/src/Cuidado e higiene.png" alt="Cuidado e Higiene" />
-            <p>Cuidado</p>
-            <p>e Higiene</p>
-          </a>
-        </div>
-      </div>
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="¿Qué necesita tu mascota?" />
+      <button class="cart-button">
+        <img class="carrito-img" src="/src/carrito.png" alt="Carrito" />
+        <!-- Asumiendo que tienes una imagen para el botón del carrito -->
+      </button>
     </div>
-    <a class="categoria-perro">Servicios</a>
+  </div>
+
+  <a class="categoria-perro">Categorías</a>
+  <div class="category">
+    <div class="category-item">
+      <a href="/Vistas/Alimento.html" class="category-link">
+        <img src="/src/Alimento.png" alt="Alimento" />
+        <p>Alimento</p>
+      </a>
+    </div>
+    <div class="category-item">
+      <a href="" class="category-link">
+        <img src="/src/Snack.png" alt="Snacks" />
+        <p>Snacks</p>
+      </a>
+    </div>
+    <div class="category-item">
+      <a href="" class="category-link">
+        <img src="/src/Farmapet.png" alt="FarmaPet" />
+        <p>FarmaPet</p>
+      </a>
+    </div>
+    <div class="category-item">
+      <a href="" class="category-link">
+        <img src="/src/Cuidado e higiene.png" alt="Cuidado e Higiene" />
+        <p>Cuidado</p>
+        <p>e Higiene</p>
+      </a>
+    </div>
+  </div>
+  <a class="categoria-servicios">Servicios</a>
+  <div class="category">
     <div class="category-item">
       <a href="" class="category-link">
         <img src="/src/Veterinaria.png" />
@@ -392,27 +87,25 @@
         <p>Entrenador</p>
       </a>
     </div>
+  </div>
 
-    <ul class="nav-bar">
-      <li>
-        <a href="/Vistas/home-1.html"
-          ><img src="/src/logo.png" class="Inicio" />Inicio</a
-        >
-      </li>
-      <li>
-        <a href="#"><img src="/src/compras.png" /> Mis Compras</a>
-      </li>
-      <li>
-        <a href="#"><img src="/src/descuento.png" /> Promociones</a>
-      </li>
-      <li>
-        <a href="/Vistas/Membresia.html"
-          ><img src="/src/membresia.png" /> Membresía</a
-        >
-      </li>
-      <li>
-        <a href="#"><img src="/src/cuenta.png" /> Cuenta</a>
-      </li>
-    </ul>
-  </body>
+  <ul class="nav-bar">
+    <li>
+      <a href="/Vistas/home-1.html"><img src="/src/logo.png" class="Inicio" />Inicio</a>
+    </li>
+    <li>
+      <a href="#"><img src="/src/compras.png" /> Mis Compras</a>
+    </li>
+    <li>
+      <a href="#"><img src="/src/descuento.png" /> Promociones</a>
+    </li>
+    <li>
+      <a href="/Vistas/Membresia.html"><img src="/src/membresia.png" /> Membresía</a>
+    </li>
+    <li>
+      <a href="#"><img src="/src/cuenta.png" /> Cuenta</a>
+    </li>
+  </ul>
+</body>
+
 </html>
