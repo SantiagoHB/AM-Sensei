@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Membresía - El hogar de Sensei</title>
+    <title>Cuenta - El hogar de Sensei</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap" />
     <style>
         html {
@@ -28,7 +28,6 @@
 
         .header {
             width: 100%;
-            background-color: #2cb6be;
             color: white;
             padding: 20px;
             display: flex;
@@ -44,7 +43,7 @@
             margin-right: 20px;
             margin-top: 20px;
             text-decoration: none;
-            color: white;
+            color: 2cb6be;
         }
 
         .header-title {
@@ -64,50 +63,6 @@
             width: 100%;
         }
 
-        .membership-card {
-            background: white;
-            border-radius: 25px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .membership-card::before,
-        .membership-card::after {
-            content: '';
-            position: absolute;
-            background: #2cb6be;
-            z-index: -1;
-        }
-
-        .membership-card::before {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            border-top-left-radius: 25px;
-        }
-
-        .membership-card::after {
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 30px;
-            border-bottom-right-radius: 25px;
-        }
-
-
-        .membership-title {
-            text-align: left;
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 15px;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
         .nuestra {
             color: #2CB6BE;
         }
@@ -115,36 +70,6 @@
         .title-desc {
             margin-top: 10px;
             margin-bottom: 10px;
-        }
-
-        .membership-description,
-        .benefits-list {
-            font-size: 14px;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            margin-left: 10px;
-            margin-right: 10px;
-            list-style: none;
-            padding: 30px;
-            border-radius: 20px;
-            border: 2px solid #2CB6BE;
-
-        }
-
-        .benefits-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        .benefits-list li::before {
-            content: "•";
-            color: black;
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 22px;
         }
 
         .purchase-button {
@@ -166,6 +91,57 @@
             text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
             box-shadow: 0 3px #999;
             ;
+        }
+
+        .profile-section {
+            padding: 16px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            color: white;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .profile-picture::after {
+            content: '';
+            background-image: url('/src/camera-icon.png');
+            /* Replace with actual camera icon */
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            margin-top: 8px;
+            color:#2CB6BE;
+            text-align: center;
+        }
+
+        .profile-email {
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+            color:#2CB6BE;
+            text-align: center;
+
+        }
+
+        .address-section {
+            background-color: #2cb6be;
+            padding: 8px;
+            margin-bottom: 16px;
+            text-align: left;
+            border-radius: 8px;
+            font-size: 0.875rem;
         }
 
         .footer-menu {
@@ -234,22 +210,20 @@
 <body>
     <div class="header">
         <a href="#" class="back-arrow">←</a>
-        <div class="header-title">Membresía</div>
     </div>
-    <div class="content">
-        <div class="membership-title">
-            <a class="nuestra">NUESTRA</a>
-            <a class="membresia">MEMBRESÍA</a>
+
+    <div class="profile-section">
+        <div class="profile-picture"></div>
+        <div class="profile-name">User Name</div>
+        <div class="profile-email">correo@dominio.com</div>
+
+
+
+        <div class="address-section">
+            Dirección<br>
+            Carrera 64c # 48 - 56,1301<br>
+            Medellín, Colombia
         </div>
-        <a class="title-desc">Una membresía con beneficios 365 días del año para que ahorres</a>
-        <ul class="benefits-list">
-            <li>Precios Member Exclusivos. Para ahorrar siempre</li>
-            <li>Domicilios GRATIS ilimitados. En tus compras superiores a $130.000</li>
-            <li>Envíos recurrentes comprando con AUTOenvío</li>
-            <li>15% OFF en servicios. aplica términos y condiciones</li>
-            <li>Siendo Miembro Premium, estás donando un % a peludos que más lo necesitan</li>
-        </ul>
-        <a href="#" class="purchase-button">Compra - $40.000 al año</a>
     </div>
 
     <!-- Navigation bar (footer) -->
