@@ -87,6 +87,28 @@
         background-color: rgba(37, 133, 138, 75%);
         box-shadow: 3px 3px 6px #999;
       }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Track background */
+        border-radius: 10px; /* Makes the track corners rounded */
+      }
+
+      /* This styles the actual scrollbar handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgba(37, 133, 138, 75%); /* Handle color */
+        border-radius: 10px; /* Makes the handle corners rounded */
+        border: 3px solid #f1f1f1; /* Adds a border around the handle */
+      }
+
+      /* Styles the handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(37, 133, 138, 100%); /* Handle color on hover */
+      }
+
+      /* This changes the size of the scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px; /* Width of the vertical scrollbar */
+        height: 12px; /* Height of the horizontal scrollbar */
+      }
 
       .nav-bar {
         background-color: #2cb6be;
