@@ -78,24 +78,30 @@
             margin: 0;
         }
 
+        .button-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
         .button-item {
             padding: 10px;
-            /* Adjust padding to your liking */
             border-bottom: 1px solid #e0e0e0;
-            /* Light gray border for separation */
+            transition: background-color 0.3s;
         }
 
         .button-item a {
             text-decoration: none;
             color: #333;
-            /* Dark text for better readability */
             display: block;
-            /* Make the entire list item clickable */
         }
 
         .button-item:last-child {
             border-bottom: none;
-            /* No border for the last item */
+        }
+
+        .button-item:hover {
+            background-color: #2CB6BE;
         }
 
 
@@ -118,7 +124,6 @@
         .profile-picture::after {
             content: '';
             background-image: url('/src/camera-icon.png');
-            /* Replace with actual camera icon */
             width: 24px;
             height: 24px;
             position: absolute;
@@ -236,7 +241,7 @@
 
 <body>
     <div class="header">
-        <a href="#" class="back-arrow">←</a>
+        <a href="\Vistas\home-1.html" class="back-arrow">←</a>
     </div>
 
     <div class="profile-section">
