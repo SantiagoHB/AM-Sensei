@@ -1,132 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scrollable List</title>
+    <
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Your Font', sans-serif;
-            /* Use the font that matches your design */
-        }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Your Font", sans-serif;
+        /* Use the font that matches your design */
+      }
 
-        .list-container {
-            display: flex;
-            height: 100vh;
-            /* Adjust the height as needed */
-        }
+      .list-container {
+        display: flex;
+        height: 100vh;
+        /* Adjust the height as needed */
+      }
 
-        .brand-list {
-            flex-grow: 1;
-            overflow-y: scroll;
-            /* This will make the list scrollable */
-            background-color: #FFFFFF;
-            list-style: none;
-            /* Removes default list styling */
-            padding: 0;
-            margin: 0;
-        }
+      .brand-list {
+        flex-grow: 1;
+        overflow-y: scroll;
+        /* This will make the list scrollable */
+        background-color: #ffffff;
+        list-style: none;
+        /* Removes default list styling */
+        padding: 0;
+        margin: 0;
+      }
 
-        .brand-item {
-            padding: 10px;
-            border-bottom: 1px solid #e5e5e5;
-            /* Border for each item */
-            /* Add other styles like fonts, colors etc. */
-        }
+      .brand-item {
+        padding: 10px;
+        border-bottom: 1px solid #e5e5e5;
+        /* Border for each item */
+        /* Add other styles like fonts, colors etc. */
+      }
 
-        .alphabet-list {
-            padding: 10px;
-            /* Styling for the alphabet list */
-        }
+      .alphabet-list {
+        padding: 10px;
+        /* Styling for the alphabet list */
+      }
 
-        .alphabet-list span {
-            display: block;
-            padding: 5px;
-            /* Additional styles for the alphabet letters */
-        }
+      .alphabet-list span {
+        display: block;
+        padding: 5px;
+        /* Additional styles for the alphabet letters */
+      }
+      .brand-group h2 {
+        padding-left: 10px; /* For some space from the left */
+      }
 
-        /* Additional media queries and responsive design adjustments */
+      /* Additional media queries and responsive design adjustments */
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="list-container">
-        <ul class="brand-list">
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-            <li class="brand-item">AGILITY GOLD</li>
-            <li class="brand-item">CHUNKY</li>
-            <li class="brand-item">DR. CLAUDER'S</li>
-
-            <!-- Add as many list items as needed -->
-        </ul>
-        <div class="alphabet-list">
-            <span>A</span>
-            <span>B</span>
-            <span>C</span>
-            <span>D</span>
-            <span>E</span>
-            <span>F</span>
-            <span>G</span>
-            <span>H</span>
-            <span>I</span>
-            <span>J</span>
-            <span>K</span>
-            <span>L</span>
-            <span>M</span>
-            <span>N</span>
-            <span>O</span>
-            <span>P</span>
-            <span>Q</span>
-            <span>R</span>
-            <span>S</span>
-            <span>T</span>
-            <span>U</span>
-            <span>V</span>
-            <span>W</span>
-            <span>X</span>
-            <span>Y</span>
-            <span>Z</span>
-            <!-- Add all alphabet letters -->
+      <ul class="brand-list">
+        <div id="A-group" class="brand-group">
+          <h2>A</h2>
+          <li class="brand-item">
+            <button type="button">AGILITY GOLD</button>
+          </li>
+          <li class="brand-item">
+            <button type="button">ANOTHER BRAND A</button>
+          </li>
+          <!-- More A items -->
         </div>
+        <div id="B-group" class="brand-group">
+          <h2>B</h2>
+          <li class="brand-item">
+            <button type="button">B</button>
+          </li>
+          <li class="brand-item">
+            <button type="button">ANOTHER BRAND B</button>
+          </li>
+          <!-- More A items -->
+        </div>
+        <div id="C-group" class="brand-group">
+          <h2>C</h2>
+          <li class="brand-item">
+            <button type="button">CHUNKY</button>
+          </li>
+          <li class="brand-item">
+            <button type="button">ANOTHER BRAND C</button>
+          </li>
+          <!-- More A items -->
+        </div>
+        <div id="D-group" class="brand-group">
+          <h2>D</h2>
+          <li class="brand-item">
+            <button type="button">DR. GOLD</button>
+          </li>
+          <li class="brand-item">
+            <button type="button">ANOTHER BRAND D</button>
+          </li>
+          <!-- More A items -->
+        </div>
+
+        <!-- Add as many list items as needed -->
+      </ul>
+      <div class="alphabet-list">
+        <button onclick="scrollToGroup('A-group')">A</button>
+        <button onclick="scrollToGroup('B-group')">B</button>
+        <span>C</span>
+        <span>D</span>
+        <span>E</span>
+        <span>F</span>
+        <span>G</span>
+        <span>H</span>
+        <span>I</span>
+        <span>J</span>
+        <span>K</span>
+        <span>L</span>
+        <span>M</span>
+        <span>N</span>
+        <span>O</span>
+        <span>P</span>
+        <span>Q</span>
+        <span>R</span>
+        <span>S</span>
+        <span>T</span>
+        <span>U</span>
+        <span>V</span>
+        <span>W</span>
+        <span>X</span>
+        <span>Y</span>
+        <span>Z</span>
+        <!-- Add all alphabet letters -->
+      </div>
     </div>
-
-</body>
-
+    <script src="/script.js"></script>
+  </body>
 </html>
