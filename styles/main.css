@@ -712,7 +712,6 @@ footer {
 .categoria-servicios {
     display: block;
     justify-content: space-around;
-    margin-bottom: 10px;
     font-weight: bolder;
     overflow-y: scroll;
     margin-bottom: 20px;
@@ -1396,4 +1395,36 @@ body {
     border-radius: 10px;
     /* Rounded corners for the border */
     /* Adjust padding to maintain the overall size */
+}
+
+.arrow-down {
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally within the button */
+    align-items: center;
+    /* Center content vertically within the button */
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 945px;
+    /* Adjust as necessary for the left margin */
+    bottom: 90px;
+    /* Adjust as necessary to position above the footer */
+    z-index: 10;
+    transform: rotate(-90deg);
+    font-size: 20px;
+    color: white;
+    background-color: #2cb6be;
+    box-shadow: 0 3px #999;
+    border-radius: 10px;
+    border-color: transparent;
+
+    /* Ensure it sits above other content but below any modals or popups */
+}
+
+.arrow-down:hover {
+    background-color: #cee2e7;
+    color: rgba(37, 133, 138, 75%);
+    text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+    box-shadow: none;
 }
