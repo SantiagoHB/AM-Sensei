@@ -143,7 +143,7 @@ body {
 
 .nav-bar {
     background-color: #2cb6be;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     z-index: 2;
     /* Your desired background color */
@@ -227,13 +227,32 @@ body {
     border-bottom-right-radius: 25px;
     display: flex;
     align-items: center;
-    height: 200px;
-    flex-direction: column;
+    height: 80px;
+    flex-direction: row;
     /* Align children vertically */
-    justify-content: center;
+    justify-content: flex-start;
     box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
     margin-bottom: 20px;
 }
+
+.header-home {
+    background-color: #2cb6be;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 0px;
+    text-align: center;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    flex-direction: column;
+    /* Align children vertically */
+    justify-content: Center;
+    box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
+    margin-bottom: 20px;
+}
+
 
 .logo-slogan {
     display: flex;
@@ -358,6 +377,8 @@ body {
 }
 
 .Header-Inicio {
+    top: 0px;
+    margin-top: 40px;
     height: 80px;
     background-color: #2cb6be;
     border-bottom-left-radius: 25px;
@@ -371,35 +392,59 @@ body {
 }
 
 .Footer-Inicio {
-    height: 80px;
     background-color: #2cb6be;
-    border-top-left-radius: 25px;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    /* Your desired background color */
     border-top-right-radius: 25px;
-    color: white;
+    border-top-left-radius: 25px;
+    /* Rounded corners */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Use flexbox for alignment */
+    justify-content: space-around;
+    /* Evenly space the items */
+    /* Some padding around the items */
+    /* Margin around the navigation bar */
+    list-style-type: none;
+    /* Remove default list styles */
+    width: 360px;
+    height: 80px;
     box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
-    /* Ajuste para visualización y espacio alrededor del header y footer */
+    padding-left: 0;
+    margin-left: 0;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .back-arrow {
     font-size: 24px;
-    margin-right: 20px;
-    margin-top: 20px;
+    padding: 5px;
     text-decoration: none;
-    color: 2cb6be;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #2cb6be;
+    margin-left: 80px;
+    border-radius: 8px;
+}
+
+.back-arrow:hover {
+    background-color: #cee2e7;
+    color: rgba(37, 133, 138, 75%);
+    text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
+
 }
 
 .header-title {
     font-size: 24px;
     flex-grow: 1;
-    margin-top: 20px;
+    margin-right: 80px;
 }
 
 .content {
     flex-grow: 1;
-    padding: 20px;
+    font-size: 20px;
+    padding: 0px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -423,6 +468,10 @@ body {
     margin: 0;
 }
 
+.button.list:hover {
+    color: white;
+}
+
 .button-item {
     padding: 10px;
     border-bottom: 1px solid #e0e0e0;
@@ -441,6 +490,7 @@ body {
 
 .button-item:hover {
     background-color: #2CB6BE;
+    color: white;
 }
 
 
@@ -495,21 +545,21 @@ body {
 }
 
 .purchase-button {
-    background-color: white;
-    color: #2cb6be;
+    background-color: rgba(209, 121, 226, 0.9);
+    color: white;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 120px;
     text-decoration: none;
 }
 
 .purchase-button:hover {
-    background-color: #cee2e7;
-    color: rgba(37, 133, 138, 75%);
+    background-color: white;
+    color: rgba(209, 121, 226, 0.9);
     text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
     box-shadow: 0 3px #999;
     ;
@@ -748,6 +798,25 @@ img.logo {
     border-radius: 15px;
     margin: 20px;
     margin-left: 40px;
+}
+
+.button-cc {
+    display: block;
+    width: 280px;
+    height: 80px;
+    position: relative;
+    font-size: 16px;
+    line-height: 80px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    margin: 20px;
+    margin-left: 40px;
+
 }
 
 #IcI {
@@ -1011,6 +1080,7 @@ input:focus::placeholder {
     padding: 30px;
     border-radius: 20px;
     border: 2px solid #2cb6be;
+    box-shadow: 6px 6px 10px rgba(107, 107, 107, 0.5);
 }
 
 .benefits-list li {
@@ -1036,11 +1106,10 @@ input:focus::placeholder {
     text-align: left;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    box-shadow: 0 3px 6px -1px rgba(140, 133, 191, 1);
-    margin-top: -30px;
-    z-index: -1;
+    margin-top: -60px;
     /* Put behind the main header */
-    width: 360px;
+    width: 320px;
+    z-index: 3;
 }
 
 #nameInput {
