@@ -26,6 +26,7 @@
         background-color: #f4f4f4;
         width: 360px;
         height: 800px;
+        padding-bottom: 80px;
       }
       .Subtitulo {
         display: flex; /* Utiliza flexbox para centrar el contenido */
@@ -43,18 +44,26 @@
         display: flex;
         height: 100vh;
         /* Adjust the height as needed */
+        margin-bottom: 80px;
+        flex-grow: 1;
+        overflow-y: auto; /* Enables scrolling on the y-axis */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+        padding-bottom: 80px; /* Same height as your fixed footer */
+        position: relative; /* For z-index stacking context */
+        z-index: 1;
       }
 
       .brand-list {
         flex-grow: 1;
-        overflow-y: scroll;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         /* This will make the list scrollable */
         background-color: transparent;
         list-style: none;
         /* Removes default list styling */
         padding: 0;
         margin-top: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
       }
 
       .brand-item {
@@ -124,6 +133,9 @@
 
       .nav-bar {
         background-color: #2cb6be;
+        position: fixed;
+        bottom: 0;
+        z-index: 2;
         /* Your desired background color */
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
@@ -141,6 +153,8 @@
         box-shadow: 0px -4px 6px -1px rgba(140, 133, 191, 1);
         padding-left: 0;
         margin-left: 0;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
       }
 
       .nav-bar li {
