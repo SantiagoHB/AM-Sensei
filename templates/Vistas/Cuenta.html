@@ -21,16 +21,67 @@
       <div class="profile-email">{{ email }}</div>
       <div class="address-section">
         Dirección<br />
-        Carrera __ # __ - __,____<br />
-        Medellín, Colombia
+        {{ direccion }}<br />
+        {{ ciudad }}, {{ pais }}
       </div>
     </div>
     <ul class="button-list">
-      <li class="button-item"><a href="#">Configurar mi cuenta</a></li>
-      <li class="button-item"><a href="#">Historial de pedidos</a></li>
-      <li class="button-item"><a href="#">Membresía</a></li>
       <li class="button-item">
-        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        <button id="confCuentaBtn" class="button-link" href="#">
+          Configurar mi cuenta
+        </button>
+      </li>
+      <div id="confCuenta" class="confCuenta">
+        <!-- Modal content -->
+        <form action="{{ url_for('guardar_direccion') }}" method="POST">
+          <label for="direccion">Dirección:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="direccion"
+            name="direccion"
+            placeholder="Carrera __ # __ - __"
+            required
+          />
+
+          <label for="ciudad">Ciudad:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="ciudad"
+            name="ciudad"
+            placeholder="Medellín"
+            required
+          />
+
+          <label for="pais">País:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="pais"
+            name="pais"
+            placeholder="Colombia"
+            required
+          />
+
+          <button type="submit" class="confCuentabtn">Guardar Dirección</button>
+        </form>
+      </div>
+
+      <li class="button-item">
+        <button onclick="location.href='#'" class="button-link">
+          Historial de pedidos
+        </button>
+      </li>
+      <li class="button-item">
+        <button onclick="location.href='#'" class="button-link">
+          Membresía
+        </button>
+      </li>
+      <li class="button-item">
+        <button href="{{url_for('logout')}}" class="button-link">
+          Cerrar sesión
+        </button>
       </li>
     </ul>
 

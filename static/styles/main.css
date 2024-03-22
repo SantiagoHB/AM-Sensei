@@ -485,7 +485,25 @@ body {
     transition: background-color 0.3s;
 }
 
-.button-item a {
+.button-link {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.button-link:hover {
+    background-color: rgba(37, 133, 138, 1);;
+    color: white;
+    cursor: pointer;
+}
+
+.button-item button {
     text-decoration: none;
     color: #333;
     display: block;
@@ -496,7 +514,7 @@ body {
 }
 
 .button-item:hover {
-    background-color: #2CB6BE;
+    background-color: rgba(37, 133, 138, 1);
     color: white;
 }
 
@@ -1428,3 +1446,56 @@ body {
     text-shadow: 2px 2px 2px rgba(102, 102, 102, 50%);
     box-shadow: none;
 }
+
+/* The Modal (background) */
+.confCuenta {
+    display: none; /* Ocultar por defecto, se muestra con JavaScript */
+    position: fixed; /* Posición fija respecto al viewport */
+    top: 50%; /* Posición en la mitad de la altura de la pantalla */
+    left: 50%; /* Posición en la mitad del ancho de la pantalla */
+    width: 200px; /* Ancho fijado a 200px */
+    height: 400px; /* Altura fijada a 100px */
+    border: 2px solid rgba(140, 133, 191, 1); /* Borde sólido negro */
+    border-radius: 25px;
+    background-color: rgba(210, 130, 212, 1); /* Fondo blanco */
+    /* Usar transform para centrar exactamente el formulario */
+    transform: translate(-50%, -50%);
+    /* Agregar algo de padding alrededor del contenido del formulario */
+    padding: 20px;
+    /* Opcional: Agregar un fondo semi-transparente alrededor del modal */
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    z-index: 10; /* Asegurarse de que el modal esté sobre otros elementos */
+  }
+
+  .confCuentabtn{
+    width: 150px;
+    height: 50px;
+    margin: 25px;
+    border: 2px solid rgba(140, 133, 191, 1);
+    border-radius: 10px;
+  }
+  
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

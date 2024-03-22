@@ -107,10 +107,15 @@ def cuenta():
         user_email = session['user']
         user_info = db.users.find_one({"correo": user_email})
         if user_info:
-            # Passing user's name and email to the template
-            return render_template('Vistas/Cuenta.html', name=user_info['nombre'], email=user_email)
+            # Pasar la información de dirección a la plantilla
+            return render_template('Vistas/Cuenta.html',
+                                   name=user_info['nombre'],
+                                   email=user_info['correo'],
+                                   direccion=user_info.get('direccion', 'No especificada'),
+                                   ciudad=user_info.get('ciudad', 'No especificada'),
+                                   pais=user_info.get('pais', 'No especificado'))
         else:
-            return "User not found", 404
+            return "Usuario no encontrado", 404
     else:
         return redirect(url_for('login'))
 
@@ -126,6 +131,27 @@ def membresia():
 def logout():
     session.clear()  # This removes all items from the session
     return redirect(url_for('login'))
+
+@app.route('/guardar_direccion', methods=['POST'])
+def guardar_direccion():
+    if 'user' in session:
+        user_email = session['user']
+        direccion = request.form['direccion']
+        ciudad = request.form['ciudad']
+        pais = request.form['pais']
+        
+        # Aquí asumimos que quieres actualizar la dirección del usuario existente
+        result = db.users.update_one(
+            {"correo": user_email},
+            {"$set": {"direccion": direccion, "ciudad": ciudad, "pais": pais}}
+        )
+        
+        if result.matched_count > 0:
+            return "Dirección guardada exitosamente.", 200, redirect(url_for('cuenta'))
+        else:
+            return "No se encontró el usuario.", 404
+    else:
+        return "Usuario no inició sesión.", 403
 
 
 if __name__ == '__main__':
