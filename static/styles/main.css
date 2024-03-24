@@ -479,17 +479,21 @@ body {
   text-decoration: none;
   color: #333;
   display: block;
-  width: 100%;
+  width: 320px;
   text-align: left;
-  padding: 10px;
+  margin: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(37, 133, 138, 1);
   transition: background-color 0.3s;
+  border-radius: 5px;
 }
 
 .button-link:hover {
   background-color: rgba(37, 133, 138, 1);
   color: white;
   cursor: pointer;
+  box-shadow: 3px 3px 6px #999;
 }
 
 .profile-section {
