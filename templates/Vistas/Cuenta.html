@@ -15,6 +15,15 @@
       <a href="\Vistas\home-1.html" class="back-arrow">←</a>
       <div class="header-title">Cuenta</div>
     </div>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
     <div class="profile-section">
       <div class="profile-picture"></div>
       <div class="profile-name">{{ name }}</div>
@@ -33,8 +42,9 @@
       </li>
       <div id="confCuenta" class="confCuenta">
         <!-- Modal content -->
+        <span class="close">&times;</span>
         <form action="{{ url_for('guardar_direccion') }}" method="POST">
-          <label for="direccion">Dirección:</label>
+          <label class="confCuentalabel" for="direccion">Dirección:</label>
           <input
             class="confCuentainput"
             type="text"
@@ -44,7 +54,7 @@
             required
           />
 
-          <label for="ciudad">Ciudad:</label>
+          <label class="confCuentalabel" for="ciudad">Ciudad:</label>
           <input
             class="confCuentainput"
             type="text"
@@ -54,7 +64,7 @@
             required
           />
 
-          <label for="pais">País:</label>
+          <label class="confCuentalabel" for="pais">País:</label>
           <input
             class="confCuentainput"
             type="text"

@@ -104,16 +104,18 @@ def forgetpw():
 @app.route('/cuenta')
 def cuenta():
     if 'user' in session:
+        message = request.args.get('message', None)
         user_email = session['user']
         user_info = db.users.find_one({"correo": user_email})
         if user_info:
-            # Pasar la información de dirección a la plantilla
+            # Add the message to the template rendering
             return render_template('Vistas/Cuenta.html',
                                    name=user_info['nombre'],
                                    email=user_info['correo'],
                                    direccion=user_info.get('direccion', 'No especificada'),
                                    ciudad=user_info.get('ciudad', 'No especificada'),
-                                   pais=user_info.get('pais', 'No especificado'))
+                                   pais=user_info.get('pais', 'No especificado'),
+                                   message=message)
         else:
             return "Usuario no encontrado", 404
     else:
@@ -140,19 +142,21 @@ def guardar_direccion():
         ciudad = request.form['ciudad']
         pais = request.form['pais']
         
-        # Aquí asumimos que quieres actualizar la dirección del usuario existente
+        # Update the user's address
         result = db.users.update_one(
             {"correo": user_email},
             {"$set": {"direccion": direccion, "ciudad": ciudad, "pais": pais}}
         )
         
         if result.matched_count > 0:
-            return "Dirección guardada exitosamente.", 200, redirect(url_for('cuenta'))
+            # Redirect with a success message
+            return redirect(url_for('cuenta', message='address_saved'))
         else:
-            return "No se encontró el usuario.", 404
+            # Redirect with a failure message
+            return redirect(url_for('cuenta', message='no_user_found'))
     else:
-        return "Usuario no inició sesión.", 403
-
+        # Redirect with a message indicating the user is not logged in
+        return redirect(url_for('login', message='not_logged_in'))
 
 if __name__ == '__main__':
     app.run(debug=True)
