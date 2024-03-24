@@ -36,9 +36,7 @@
     </div>
     <ul class="button-list">
       <li class="button-item">
-        <button id="confCuentaBtn" class="button-link" href="#">
-          Configurar mi cuenta
-        </button>
+        <a id="confCuentaBtn" class="button-link"> Configurar mi cuenta </a>
       </li>
       <div id="confCuenta" class="confCuenta">
         <!-- Modal content -->
@@ -79,19 +77,15 @@
       </div>
 
       <li class="button-item">
-        <button onclick="location.href='#'" class="button-link">
+        <a onclick="location.href='#'" class="button-link">
           Historial de pedidos
-        </button>
+        </a>
       </li>
       <li class="button-item">
-        <button onclick="location.href='#'" class="button-link">
-          Membresía
-        </button>
+        <a onclick="location.href='#'" class="button-link"> Membresía </a>
       </li>
       <li class="button-item">
-        <button href="{{url_for('logout')}}" class="button-link">
-          Cerrar sesión
-        </button>
+        <a href="{{url_for('logout')}}" class="button-link"> Cerrar sesión </a>
       </li>
     </ul>
 

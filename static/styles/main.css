@@ -473,16 +473,6 @@ body {
   margin: 0;
 }
 
-.button.list:hover {
-  color: white;
-}
-
-.button-item {
-  padding: 10px;
-  border-bottom: 1px solid #e0e0e0;
-  transition: background-color 0.3s;
-}
-
 .button-link {
   background: none;
   border: none;
@@ -492,6 +482,7 @@ body {
   width: 100%;
   text-align: left;
   padding: 10px;
+  border-bottom: 1px solid rgba(37, 133, 138, 1);
   transition: background-color 0.3s;
 }
 
@@ -499,21 +490,6 @@ body {
   background-color: rgba(37, 133, 138, 1);
   color: white;
   cursor: pointer;
-}
-
-.button-item button {
-  text-decoration: none;
-  color: #333;
-  display: block;
-}
-
-.button-item:last-child {
-  border-bottom: none;
-}
-
-.button-item:hover {
-  background-color: rgba(37, 133, 138, 1);
-  color: white;
 }
 
 .profile-section {
