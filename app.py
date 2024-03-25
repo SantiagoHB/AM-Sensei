@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -6,11 +6,16 @@ app = Flask(__name__)
 app.secret_key = 'your_very_secret_key_here'  # Remember to set a real secret key for session management
 
 # MongoDB URI
-mongo_uri = "mongodb://Santi:12345@localhost/Usuarios"
+mongo_uri = "mongodb://Santi:12345@localhost/"
+
+# Cliente de MongoDB
 client = MongoClient(mongo_uri)
 
-# Access your database
-db = client['Usuarios']
+# Acceder a la base de datos de Usuarios
+db_usuarios = client['Usuarios']
+
+# Acceder a la base de datos de Productos
+db_productos = client['Productos']
 
 @app.route('/')
 def home():
@@ -21,7 +26,7 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        user = db.users.find_one({"correo": email})
+        user = db_usuarios.users.find_one({"correo": email})
         if user and check_password_hash(user['contraseña'], password):
             session['user'] = email
             return redirect(url_for('home_1'))
@@ -36,7 +41,7 @@ def register():
         password = request.form.get('password')
         name = request.form.get('name')
         hashed_password = generate_password_hash(password)
-        db.users.insert_one({
+        db_usuarios.users.insert_one({
             "nombre": name,
             "correo": email,
             "contraseña": hashed_password
@@ -106,7 +111,7 @@ def cuenta():
     if 'user' in session:
         message = request.args.get('message', None)
         user_email = session['user']
-        user_info = db.users.find_one({"correo": user_email})
+        user_info = db_usuarios.users.find_one({"correo": user_email})
         if user_info:
             # Add the message to the template rendering
             return render_template('Vistas/Cuenta.html',
@@ -143,7 +148,7 @@ def guardar_direccion():
         pais = request.form['pais']
         
         # Update the user's address
-        result = db.users.update_one(
+        result = db_usuarios.users.update_one(
             {"correo": user_email},
             {"$set": {"direccion": direccion, "ciudad": ciudad, "pais": pais}}
         )
@@ -157,6 +162,40 @@ def guardar_direccion():
     else:
         # Redirect with a message indicating the user is not logged in
         return redirect(url_for('login', message='not_logged_in'))
+    
+@app.route('/producto')
+def producto():
+    if 'user' in session:
+        # Usar db_productos para consultar información de productos
+        products = list(db_productos.products.find({"categoria": "Agility Gold"}, {"_id": 0}))
+        return render_template('Vistas/producto.html', products=products)
+    else:
+        return redirect(url_for('login'))
+
+@app.route('/get-products', methods=['GET'])
+def get_products():
+    products = list(db_productos.products.find({}, {"_id": 0}).limit(15))  # Limita a 5 para la prueba
+    return jsonify(products)
+
+
+
+
+@app.route('/get-product-details/<codigo_producto>', methods=['GET'])
+def get_product_details(codigo_producto):
+    try:
+        # Convertir a entero si el código del producto es numérico en la base de datos
+        codigo_producto = int(codigo_producto)
+    except ValueError:
+        # Manejar el error si no es un número
+        return jsonify({"error": "Código de producto inválido"}), 400
+
+    product_details = db_productos.products.find_one({"codigo_producto": codigo_producto}, {"_id": 0})
+    return jsonify(product_details if product_details else {})
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
