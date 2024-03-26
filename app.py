@@ -174,11 +174,7 @@ def producto():
 
 @app.route('/get-products', methods=['GET'])
 def get_products():
-<<<<<<< HEAD
     products = list(db_productos.products.find({}, {"_id": 0}).limit(20))  # Limita a 5 para la prueba
-=======
-    products = list(db_productos.products.find({}, {"_id": 0}).limit(15))  # Limita a 5 para la prueba
->>>>>>> bd523b841ed42e5c53f97b02bbfc0dcada68fc17
     return jsonify(products)
 
 
@@ -195,6 +191,15 @@ def get_product_details(codigo_producto):
 
     product_details = db_productos.products.find_one({"codigo_producto": codigo_producto}, {"_id": 0})
     return jsonify(product_details if product_details else {})
+
+@app.route('/get-brands', methods=['GET'])
+def get_brands():
+    worksheet = spreadsheet.worksheet('ITALCOL')
+    # Get all brand values in the 'MARCA' column, for example
+    brands = worksheet.col_values(column_index_of_brand)
+    unique_brands = list(set(brands))  # Remove duplicates
+    return jsonify(unique_brands)
+
 
 
 

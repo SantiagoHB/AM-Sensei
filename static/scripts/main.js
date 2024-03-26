@@ -113,3 +113,18 @@ function loadProductDetails(codigoProducto) {
       console.error("Error al cargar los detalles del producto:", error);
     });
 }
+
+fetch("/get-brands")
+  .then((response) => response.json())
+  .then((brands) => {
+    const brandDropdown = document.getElementById("brand-dropdown");
+    brands.forEach((brand) => {
+      const option = document.createElement("option");
+      option.textContent = brand;
+      option.value = brand;
+      brandDropdown.appendChild(option);
+    });
+  })
+  .catch((error) => {
+    console.error("Error loading brands:", error);
+  });
