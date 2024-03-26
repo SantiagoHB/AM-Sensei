@@ -1494,3 +1494,90 @@ body {
 .close:hover {
   color: #f00; /* Change color when hovering over the close button */
 }
+
+.content {
+  text-align: center;
+}
+
+.icon-holder {
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Hace el div circular */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-holder img {
+  width: 100%; /* Ajusta la imagen para que llene el contenedor */
+}
+
+.product-info {
+  margin-top: 20px;
+}
+
+.product-info > div {
+  margin: 10px 0;
+}
+
+.descripcion span,
+.codigo-barra span,
+.codigo-producto span,
+.precio-express span {
+  font-weight: bold;
+}
+
+/* Estilo del botón para desplegar el contenido */
+.dropbtn {
+  background-color: #b8a0d3;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+/* El contenedor del dropdown - necesario para posicionar el contenido desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Contenido desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow-y: auto;
+  height: auto;
+  max-height: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Enlaces dentro del contenido desplegable */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cambio de color al pasar el mouse sobre los elementos */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostrar el contenido desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Cambiar el color del botón al pasar el mouse sobre él */
+.dropdown:hover .dropbtn {
+  background-color: #8c50d1;
+}
