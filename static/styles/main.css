@@ -1531,6 +1531,7 @@ body {
 
 /* Estilo del botón para desplegar el contenido */
 .dropbtn {
+<<<<<<< HEAD
   background-color: #b8a0d3;
   color: white;
   padding: 16px;
@@ -1538,6 +1539,14 @@ body {
   border-radius: 10px;
   cursor: pointer;
   border: none;
+=======
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+>>>>>>> bd523b841ed42e5c53f97b02bbfc0dcada68fc17
 }
 
 /* El contenedor del dropdown - necesario para posicionar el contenido desplegable */
@@ -1552,9 +1561,12 @@ body {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
+<<<<<<< HEAD
   overflow-y: auto;
   height: auto;
   max-height: 160px;
+=======
+>>>>>>> bd523b841ed42e5c53f97b02bbfc0dcada68fc17
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -1579,5 +1591,9 @@ body {
 
 /* Cambiar el color del botón al pasar el mouse sobre él */
 .dropdown:hover .dropbtn {
+<<<<<<< HEAD
   background-color: #8c50d1;
+=======
+  background-color: #3e8e41;
+>>>>>>> bd523b841ed42e5c53f97b02bbfc0dcada68fc17
 }

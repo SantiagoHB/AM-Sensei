@@ -174,7 +174,11 @@ def producto():
 
 @app.route('/get-products', methods=['GET'])
 def get_products():
+<<<<<<< HEAD
     products = list(db_productos.products.find({}, {"_id": 0}).limit(20))  # Limita a 5 para la prueba
+=======
+    products = list(db_productos.products.find({}, {"_id": 0}).limit(15))  # Limita a 5 para la prueba
+>>>>>>> bd523b841ed42e5c53f97b02bbfc0dcada68fc17
     return jsonify(products)
 
 
