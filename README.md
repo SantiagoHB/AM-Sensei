@@ -28,7 +28,7 @@ Aqui tenemos una pantalla de inicio tipo ecommerce donde podemos buscar por medi
 
 (por implementar)
 
-![COMPRAS](static/src/vista-coompras.png)
+![COMPRAS](static/src/vista-compras.png)
 
 **VISTA PROMOCIONES**
 
