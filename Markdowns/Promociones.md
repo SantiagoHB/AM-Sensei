@@ -2,4 +2,4 @@
 
 (por implementar)
 
-![PROMOCIONES](static/src/vista-promociones.png)
+![PROMOCIONES](../static/src/vista-promociones.png)

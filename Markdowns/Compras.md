@@ -2,4 +2,4 @@
 
 (por implementar)
 
-![COMPRAS](static/src/vista-compras.png)
+![COMPRAS](../static/src/vista-compras.png)
