@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuenta - El hogar de Sensei</title>
+    <link
+      rel="stylesheet"
+      href="styles/main.css"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="home-1.html" class="back-arrow">←</a>
+      <div class="header-title">Cuenta</div>
+    </div>
+
+    <div class="profile-section">
+      <div class="profile-picture"></div>
+      <div class="profile-name">Usuario</div>
+      <div class="profile-email">Email</div>
+      <div class="address-section">
+        Dirección<br />
+        Calle 1 # 1 - 1<br />
+        Narnia, Narnia
+      </div>
+    </div>
+    <ul class="button-list">
+      <li class="button-item">
+        <a id="confCuentaBtn" class="button-link"> Configurar mi cuenta </a>
+      </li>
+      <div id="confCuenta" class="confCuenta">
+        <!-- Modal content -->
+        <span class="close">&times;</span>
+        <form action="guardar_direccion" method="POST">
+          <label class="confCuentalabel" for="direccion">Dirección:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="direccion"
+            name="direccion"
+            placeholder="Carrera __ # __ - __"
+            required
+          />
+
+          <label class="confCuentalabel" for="ciudad">Ciudad:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="ciudad"
+            name="ciudad"
+            placeholder="Medellín"
+            required
+          />
+
+          <label class="confCuentalabel" for="pais">País:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="pais"
+            name="pais"
+            placeholder="Colombia"
+            required
+          />
+
+          <button type="submit" class="confCuentabtn">Guardar Dirección</button>
+        </form>
+      </div>
+
+      <li class="button-item">
+        <a onclick="location.href='#'" class="button-link">
+          Historial de pedidos
+        </a>
+      </li>
+      <li class="button-item">
+        <a onclick="location.href='#'" class="button-link"> Membresía </a>
+      </li>
+      <li class="button-item">
+        <a href="inicio.html" class="button-link"> Cerrar sesión </a>
+      </li>
+    </ul>
+
+    <!-- Navigation bar (footer) -->
+    <ul class="nav-bar">
+      <li>
+        <a href="home-1.html"
+          ><img
+            src="src/Logo.png"
+            class="Inicio"
+          />Inicio</a
+        >
+      </li>
+      <li>
+        <a href="mis_compras.html"
+          ><img src="src/compras.png" /> Mis
+          Compras</a
+        >
+      </li>
+      <li>
+        <a href="Promociones.html"
+          ><img src="src/descuento.png" />
+          Promociones</a
+        >
+      </li>
+      <li>
+        <a href="Membresia.html"
+          ><img src="src/membresia.png" />
+          Membresía</a
+        >
+      </li>
+      <li>
+        <a href="Cuenta.html"
+          ><img src="src/cuenta.png" />
+          Cuenta</a
+        >
+      </li>
+    </ul>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
