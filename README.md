@@ -1,6 +1,10 @@
 # Aplicacion tipo E-Commerce para articulos de Mascotas.
 
-Esta aplicacion de E-Comerce esta diseñada para una interaccion intuitiva con el usuario final, presentando los colores distintivos de la marca "El Hogar de Sensei". Cada vista está organizada para facilitar las diferentes interacciones con la aplicación, incluyendo sistema de Inicio de Sesión y Registro implementando todo en una base de datos local de MongoDB y mucho mas.
+Esta aplicacion de E-Comerce esta diseñada para una interaccion intuitiva con el usuario final, presentando los colores distintivos de la marca "El Hogar de Sensei".
+
+Para ejecutarlo como App de Android sigue la guia de [Ejecucion (Execution)](Markdowns/Ejecutar.md).
+
+Cada vista está organizada para facilitar las diferentes interacciones con la aplicación, incluyendo sistema de Inicio de Sesión y Registro implementando todo en una base de datos local de MongoDB y mucho mas.
 
 Debajo tienen cada componente de la aplicación, cada uno descrito en su propio documento :
 
