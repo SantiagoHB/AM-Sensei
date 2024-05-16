@@ -1,0 +1,10 @@
+{
+  "appId": "co.edu.upb.senseiam",
+  "appName": "senseiam",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
