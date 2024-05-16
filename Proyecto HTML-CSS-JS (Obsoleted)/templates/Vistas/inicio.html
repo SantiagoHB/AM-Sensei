@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - El Hogar de Sensei</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/main.css')}}"
+    />
+  </head>
+
+  <body>
+    <div class="contenedor-app">
+      <header class="Header-Inicio"></header>
+
+      <main>
+        <img
+          src="{{ url_for('static', filename='src/Logo.png')}}"
+          class="logo"
+        />
+        <a href="{{ url_for('register') }}" class="button" id="CC"
+          >Crear cuenta</a
+        >
+        <a href="{{ url_for('login') }}" class="button" id="IS"
+          >Inicio de Sesión</a
+        >
+        <a
+          href="/Aplicaciones Moviles/AM-Sensei/Vistas/home-1.html"
+          class="button"
+          id="IcI"
+          >Ingresar como invitado</a
+        >
+      </main>
+
+      <footer class="Footer-Inicio"></footer>
+    </div>
+
+    <script src="{{ url_for('static',
+    filename='scripts/main.js') }}"></script>
+  </body>
+</html>

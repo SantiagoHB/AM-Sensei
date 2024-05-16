@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuenta - El hogar de Sensei</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/main.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="\Vistas\home-1.html" class="back-arrow">←</a>
+      <div class="header-title">Cuenta</div>
+    </div>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <div class="profile-section">
+      <div class="profile-picture"></div>
+      <div class="profile-name">{{ name }}</div>
+      <div class="profile-email">{{ email }}</div>
+      <div class="address-section">
+        Dirección<br />
+        {{ direccion }}<br />
+        {{ ciudad }}, {{ pais }}
+      </div>
+    </div>
+    <ul class="button-list">
+      <li class="button-item">
+        <a id="confCuentaBtn" class="button-link"> Configurar mi cuenta </a>
+      </li>
+      <div id="confCuenta" class="confCuenta">
+        <!-- Modal content -->
+        <span class="close">&times;</span>
+        <form action="{{ url_for('guardar_direccion') }}" method="POST">
+          <label class="confCuentalabel" for="direccion">Dirección:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="direccion"
+            name="direccion"
+            placeholder="Carrera __ # __ - __"
+            required
+          />
+
+          <label class="confCuentalabel" for="ciudad">Ciudad:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="ciudad"
+            name="ciudad"
+            placeholder="Medellín"
+            required
+          />
+
+          <label class="confCuentalabel" for="pais">País:</label>
+          <input
+            class="confCuentainput"
+            type="text"
+            id="pais"
+            name="pais"
+            placeholder="Colombia"
+            required
+          />
+
+          <button type="submit" class="confCuentabtn">Guardar Dirección</button>
+        </form>
+      </div>
+
+      <li class="button-item">
+        <a onclick="location.href='#'" class="button-link">
+          Historial de pedidos
+        </a>
+      </li>
+      <li class="button-item">
+        <a onclick="location.href='#'" class="button-link"> Membresía </a>
+      </li>
+      <li class="button-item">
+        <a href="{{url_for('logout')}}" class="button-link"> Cerrar sesión </a>
+      </li>
+    </ul>
+
+    <!-- Navigation bar (footer) -->
+    <ul class="nav-bar">
+      <li>
+        <a href="{{ url_for('home_1') }}"
+          ><img
+            src="{{ url_for('static', filename='src/logo.png') }}"
+            class="Inicio"
+          />Inicio</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('miscompras') }}"
+          ><img src="{{ url_for('static', filename='src/compras.png') }}" /> Mis
+          Compras</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('promociones') }}"
+          ><img src="{{ url_for('static', filename='src/descuento.png') }}" />
+          Promociones</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('membresia') }}"
+          ><img src="{{ url_for('static', filename='src/membresia.png') }}" />
+          Membresía</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('cuenta') }}"
+          ><img src="{{ url_for('static', filename='src/cuenta.png') }}" />
+          Cuenta</a
+        >
+      </li>
+    </ul>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+  </body>
+</html>
