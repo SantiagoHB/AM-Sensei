@@ -75,56 +75,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Load products into dropdown and setup click event for loading product details
-  fetch("/get-products")
-    .then((response) => response.json())
-    .then((data) => {
-      const dropdown = document.querySelector(".dropdown-content");
-      data.forEach((product) => {
-        const a = document.createElement("a");
-        a.textContent = product.descripcion;
-        a.href = "javascript:void(0);"; // Prevent the page from navigating away
-        a.addEventListener("click", function () {
-          loadProductDetails(product.codigo_producto);
-        });
-        dropdown.appendChild(a);
-      });
-    });
-});
+  // Scroll functionality for alphabet buttons
+  function scrollToGroup(groupId) {
+    var groupElement = document.getElementById(groupId);
+    if (groupElement) {
+      groupElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
-// Function for loading product details
-function loadProductDetails(codigoProducto) {
-  fetch(`/get-product-details/${codigoProducto}`)
-    .then((response) => response.json())
-    .then((data) => {
-      document.getElementById("descripcion").textContent =
-        data.descripcion || "Descripción no disponible";
-      document.getElementById("codigo-barra").textContent =
-        data.codigo_barra || "Código de Barra no disponible";
-      document.getElementById("codigo-producto").textContent =
-        data.codigo_producto || "Código de Producto no disponible";
-      // Mostrar el precio express como flotante, asegurándose de que sea un número
-      document.getElementById("precio-express").textContent =
-        typeof data.express === "number"
-          ? `$${data.express.toFixed(2)}`
-          : "Precio no disponible";
-    })
-    .catch((error) => {
-      console.error("Error al cargar los detalles del producto:", error);
+  // Add event listeners to alphabet buttons
+  var alphabetButtons = document.querySelectorAll(".alphabet-list button");
+  alphabetButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var targetGroup = button.textContent + "-group";
+      scrollToGroup(targetGroup);
     });
-}
-
-fetch("/get-brands")
-  .then((response) => response.json())
-  .then((brands) => {
-    const brandDropdown = document.getElementById("brand-dropdown");
-    brands.forEach((brand) => {
-      const option = document.createElement("option");
-      option.textContent = brand;
-      option.value = brand;
-      brandDropdown.appendChild(option);
-    });
-  })
-  .catch((error) => {
-    console.error("Error loading brands:", error);
   });
+});

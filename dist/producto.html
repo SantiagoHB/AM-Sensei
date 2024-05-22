@@ -3,20 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alimento - El hogar de Sensei</title>
-    <link
-      rel="stylesheet"
-      href="styles/main.css"
-    />
+    <title>Producto - El hogar de Sensei</title>
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
 
   <body>
     <div class="header-home">
       <div class="logo-slogan">
-        <img
-          src="src/Logo.png"
-          class="logo"
-        />
+        <img src="src/Logo.png" class="logo" />
         <div>
           <span class="nombre">El hogar de Sensei</span>
           <span class="slogan">Nutrición y Salud</span>
@@ -28,19 +22,21 @@
           class="search-input"
           placeholder="¿Qué Producto Buscas?"
         />
-        <button class="cart-button">
-          <img
-            class="carrito-img"
-            src="src/carrito.png"
-            alt="Carrito"
-          />
-        </button>
+        <a class="cart-button" href="Pedidos.html">
+          <img class="carrito-img" src="src/carrito.png" alt="Carrito" />
+        </a>
       </div>
     </div>
-
+    <div class="content">
+      <p>No hay pedidos</p>
+      <button class="purchase-button" onclick="location.href='home-1.html'">
+        Atras
+      </button>
+    </div>
+    <!--
     <select id="brand-dropdown">
       <option value="">Select a Brand</option>
-      <!-- Options will be populated by main.js -->
+       Options will be populated by main.js 
     </select>
 
     <div class="dropdown">
@@ -71,39 +67,28 @@
       </div>
     </div>
 
+-->
+
     <!-- Navigation bar (footer) -->
     <ul class="nav-bar">
       <li>
         <a href="home-1.html"
-        ><img
-                src="src/Logo.png"
-                class="Inicio"
-        />Inicio</a
+          ><img src="src/Logo.png" class="Inicio" />Inicio</a
         >
       </li>
       <li>
-        <a href="mis_compras.html"
-        ><img src="src/compras.png" /> Mis
-          Compras</a
-        >
+        <a href="mis_compras.html"><img src="src/compras.png" /> Mis Compras</a>
       </li>
       <li>
         <a href="Promociones.html"
-        ><img src="src/descuento.png" />
-          Promociones</a
+          ><img src="src/descuento.png" /> Promociones</a
         >
       </li>
       <li>
-        <a href="Membresia.html"
-        ><img src="src/membresia.png" />
-          Membresía</a
-        >
+        <a href="Membresia.html"><img src="src/membresia.png" /> Membresía</a>
       </li>
       <li>
-        <a href="Cuenta.html"
-        ><img src="src/cuenta.png" />
-          Cuenta</a
-        >
+        <a href="Cuenta.html"><img src="src/cuenta.png" /> Cuenta</a>
       </li>
     </ul>
     <script src="scripts/main.js"></script>
